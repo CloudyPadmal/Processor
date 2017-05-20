@@ -1,0 +1,415 @@
+module CONTROL_UNIT
+(
+    input CLOCK, FLAG_Z,
+    input [7:0] INSTRUCTION,
+    output reg FETCH, FINISH = 0,
+    output reg [2:0] REG_IN_B_BUS,
+    output reg [2:0] ALU_OP,
+    output reg [12:0] SELECTORS
+    
+);
+
+    localparam
+    FETCH1 = 6'd0, FETCH2 = 6'd1, FETCH3 = 6'd2, FETCH4 = 6'd57,
+    CLAC1 = 6'd3, MVACAR1 = 6'd59, STAC1 = 6'd4, WRITE = 6'd53,
+    MVACRI1 = 6'd6, MVACRII1 = 6'd7, MVACRIII1 = 6'd8, MVACR1 = 6'd9,
+    MVRIAC1 = 6'd10, MVRIIAC1 = 6'd11, MVRIIIAC1 = 6'd12, MVRAC1 = 6'd13,
+    INAC1 = 6'd14, INCR1 = 6'd40, INCR2 = 6'd41, INCR3 = 6'd42, 
+    LDAC1 = 6'd15, LDAC2 = 6'd16, LDAC3 = 6'd56,
+    SUB1 = 6'd17, ADD1 = 6'd19, DIV21 = 6'd20, DECAC1 = 6'd18, BYTESHIFT1 = 6'd21,
+    JUMPNZ1 = 6'd22, JUMPNZY1 = 6'd23, JUMPNZN1 = 6'd24, JUMPNZN2 = 6'd25,
+    JUMPNZN3 = 6'd26, JUMPNZNSKIP = 6'd55,
+    ADDM1 = 6'd27, ADDM2 = 6'd28, ADDMPC = 6'd54,
+    NOP = 6'd58, END = 6'd60;
+    
+    reg [5:0] CONTROL_COMMAND;
+    reg [5:0] NEXT_COMMAND = FETCH1;
+    
+    always @ (negedge CLOCK) CONTROL_COMMAND <= NEXT_COMMAND;
+    
+    always @ (CONTROL_COMMAND or FLAG_Z or INSTRUCTION)
+        case(CONTROL_COMMAND)
+            FETCH1:
+                begin
+                    FETCH <= 0;
+                    FINISH <= 0;
+                    REG_IN_B_BUS <= 3'd7;
+                    ALU_OP <= 3'd2;
+                    SELECTORS <= 13'b0_0000_0000_0000;
+                    NEXT_COMMAND <= FETCH2;
+                end
+
+            FETCH2:
+                begin
+                    FETCH <= 1;
+                    FINISH <= 0;
+                    REG_IN_B_BUS <= 3'd7;
+                    ALU_OP <= 3'd2;
+                    SELECTORS <= 13'b0_0000_0000_0000;
+                    NEXT_COMMAND <= FETCH3;
+                end
+            
+            FETCH3:
+                begin
+                    FETCH <= 0;
+                    FINISH <= 0;
+                    REG_IN_B_BUS <= 3'd0;
+                    ALU_OP <= 3'd2;
+                    SELECTORS <= 13'b1_0000_0000_0000;
+                    NEXT_COMMAND <= FETCH4;
+                end
+            
+            FETCH4:
+                begin
+                    FETCH <= 0;
+                    FINISH <= 0;
+                    REG_IN_B_BUS <= 3'd0;
+                    ALU_OP <= 3'd2;
+                    SELECTORS <= 13'b0_0000_0000_0000;
+                    NEXT_COMMAND <= INSTRUCTION[5:0];
+                end
+            
+            CLAC1:
+                begin
+                    FETCH <= 0;
+                    FINISH <= 0;
+                    REG_IN_B_BUS <= 3'd0;
+                    ALU_OP <= 3'd3;
+                    SELECTORS <= 13'b0_0000_0000_0010;
+                    NEXT_COMMAND <= FETCH1;
+                end
+            
+            MVACAR1:
+                begin
+                    FETCH <= 0;
+                    FINISH <= 0;
+                    REG_IN_B_BUS <= 3'd6;
+                    ALU_OP <= 3'd0;
+                    SELECTORS <= 13'b0_0000_1000_0000;
+                    NEXT_COMMAND <= FETCH1;
+                end
+            
+            STAC1:
+                begin
+                    FETCH <= 0;
+                    FINISH <= 0;
+                    REG_IN_B_BUS <= 3'd6;
+                    ALU_OP <= 3'd0;
+                    SELECTORS <= 13'b0_0000_0000_0001;
+                    NEXT_COMMAND <= WRITE;
+                end
+            
+            WRITE:
+                begin
+                    FETCH <= 0;
+                    FINISH <= 0;
+                    REG_IN_B_BUS <= 3'd6;
+                    ALU_OP <= 3'd0;
+                    SELECTORS <= 13'b0_0000_0000_0001;
+                    NEXT_COMMAND <= FETCH1;
+                end
+            
+            MVACRI1:
+                begin
+                    FETCH <= 0;
+                    FINISH <= 0;
+                    REG_IN_B_BUS <= 3'd6;
+                    ALU_OP <=3'd0;
+                    SELECTORS <= 13'b0_0000_0010_0000;
+                    NEXT_COMMAND <= FETCH1;
+                end
+            
+            MVACRII1:
+                begin
+                    FETCH <= 0;
+                    FINISH <= 0;
+                    REG_IN_B_BUS <= 3'd6;
+                    ALU_OP <= 3'd0;
+                    SELECTORS <= 13'b0_0000_0001_0000;
+                    NEXT_COMMAND <= FETCH1;
+                end
+            
+            MVACRIII1:
+                begin
+                    FETCH <= 0;
+                    FINISH <= 0;
+                    REG_IN_B_BUS <= 3'd6;
+                    ALU_OP <= 3'd0;
+                    SELECTORS <= 13'b0_0000_0000_1000;
+                    NEXT_COMMAND <= FETCH1;
+                end
+            
+            MVACR1:
+                begin
+                    FETCH <= 0;
+                    FINISH <= 0;
+                    REG_IN_B_BUS <=3'd6;
+                    ALU_OP <= 3'd0;
+                    SELECTORS <= 13'b0_0000_0000_0100;
+                    NEXT_COMMAND <= FETCH1;
+                end
+            
+            MVRIAC1:
+                begin
+                    FETCH <= 0;
+                    FINISH <= 0;
+                    REG_IN_B_BUS <= 3'd2;
+                    ALU_OP <= 3'd2;
+                    SELECTORS <= 13'b0_0000_0000_0010;
+                    NEXT_COMMAND <= FETCH1;
+                end
+            
+            MVRIIAC1:
+                begin
+                    FETCH <= 0;
+                    FINISH <= 0;
+                    REG_IN_B_BUS <= 3'd3;
+                    ALU_OP <= 3'd2;
+                    SELECTORS <= 13'b0_0000_0000_0010;
+                    NEXT_COMMAND <= FETCH1;
+                end
+            
+            MVRIIIAC1:
+                begin
+                    FETCH <= 0;
+                    FINISH <= 0;
+                    REG_IN_B_BUS <= 3'd4;
+                    ALU_OP <= 3'd2;
+                    SELECTORS <= 13'b0_0000_0000_0010;
+                    NEXT_COMMAND <= FETCH1;
+                end
+            
+            MVRAC1:
+                begin
+                    FETCH <= 0;
+                    FINISH <= 0;
+                    REG_IN_B_BUS <= 3'd5;
+                    ALU_OP <= 3'd2;
+                    SELECTORS <= 13'b0_0000_0000_0010;
+                    NEXT_COMMAND <= FETCH1;
+                end
+            
+            INAC1:
+                begin
+                    FETCH <= 0;
+                    FINISH <= 0;
+                    REG_IN_B_BUS <= 3'd0;
+                    ALU_OP <= 3'd0;
+                    SELECTORS <= 13'b0_0001_0000_0000;
+                    NEXT_COMMAND <= FETCH1;
+                end
+            
+            INCR1:
+                begin
+                    FETCH <= 0;
+                    FINISH <= 0;
+                    REG_IN_B_BUS <= 3'd0;
+                    ALU_OP <= 3'd0;
+                    SELECTORS <= 13'b0_1000_0000_0000;
+                    NEXT_COMMAND <= FETCH1;
+                end
+            
+            INCR2:
+                begin
+                    FETCH <= 0;
+                    FINISH <= 0;
+                    REG_IN_B_BUS <= 3'd0;
+                    ALU_OP <= 3'd0;
+                    SELECTORS <= 13'b0_0100_0000_0000;
+                    NEXT_COMMAND <= FETCH1;
+                end
+                
+            INCR3:
+                begin
+                    FETCH <= 0;
+                    FINISH <= 0;
+                    REG_IN_B_BUS <= 3'd0;
+                    ALU_OP <= 3'd0;
+                    SELECTORS <= 13'b0_0010_0000_0000;
+                    NEXT_COMMAND <= FETCH1;
+                end
+            
+            LDAC1:
+                begin
+                    FETCH <= 0;
+                    FINISH <= 0;
+                    REG_IN_B_BUS <= 3'd6;
+                    ALU_OP <= 3'd0;
+                    SELECTORS <= 13'b0_0000_1000_0000;
+                    NEXT_COMMAND <= LDAC2;
+                end
+            
+            LDAC2:
+                begin
+                    FETCH <= 0;
+                    FINISH <= 0;
+                    REG_IN_B_BUS <= 3'd0;
+                    ALU_OP <= 3'd0;
+                    SELECTORS <= 13'b0_0000_0000_0000;
+                    NEXT_COMMAND <= LDAC3;
+                end
+            
+            LDAC3:
+                begin
+                    FETCH <= 0;
+                    FINISH <= 0;
+                    REG_IN_B_BUS <= 3'd0;
+                    ALU_OP <= 3'd2;
+                    SELECTORS <= 13'b0_0000_0000_0010;
+                    NEXT_COMMAND <= FETCH1;
+                end
+            
+            SUB1:
+                begin
+                    FETCH <= 0;
+                    FINISH <= 0;
+                    REG_IN_B_BUS <= 3'd5;
+                    ALU_OP <= 3'd1;
+                    SELECTORS <= 13'b0_0000_0000_0010;
+                    NEXT_COMMAND <= FETCH1;
+                end
+            
+            DECAC1:
+                begin
+                    FETCH <= 0;
+                    FINISH <= 0;
+                    REG_IN_B_BUS <= 3'd0;
+                    ALU_OP <= 3'd4;
+                    SELECTORS <= 13'b0_0000_0000_0010;
+                    NEXT_COMMAND <= FETCH1;
+                end
+            
+            ADD1:
+                begin
+                    FETCH <= 0;
+                    FINISH <= 0;
+                    REG_IN_B_BUS <= 3'd5;
+                    ALU_OP <= 3'd0;
+                    SELECTORS <= 13'b0_0000_0000_0010;
+                    NEXT_COMMAND <= FETCH1;
+                end
+            
+            DIV21:
+                begin
+                    FETCH <= 0;
+                    FINISH <= 0;
+                    REG_IN_B_BUS <= 3'd0;
+                    ALU_OP <= 3'd6;
+                    SELECTORS <= 13'b0_0000_0000_0010;
+                    NEXT_COMMAND <= FETCH1;
+                end
+            
+            BYTESHIFT1:
+                begin
+                    FETCH <= 0;
+                    FINISH <= 0;
+                    REG_IN_B_BUS <= 3'd0;
+                    ALU_OP <= 3'd5;
+                    SELECTORS <= 13'b0_0000_0000_0010;
+                    NEXT_COMMAND <= FETCH1;
+                end
+            
+            JUMPNZ1:
+                begin
+                    FETCH <= 0;
+                    FINISH <= 0;
+                    REG_IN_B_BUS <= 3'd0;
+                    ALU_OP <= 3'd2;
+                    SELECTORS <= 13'b0_0000_0000_0000;
+                    if (FLAG_Z) NEXT_COMMAND <= JUMPNZY1;
+                    else NEXT_COMMAND <= JUMPNZN1;
+                end
+            
+            JUMPNZY1:
+                begin
+                    FETCH <= 0;
+                    FINISH <= 0;
+                    REG_IN_B_BUS <= 3'd0;
+                    ALU_OP <= 3'd2;
+                    SELECTORS <= 13'b1_0000_0000_0000;
+                    NEXT_COMMAND <= FETCH1;
+                end
+            
+            JUMPNZN1:
+                begin
+                    FETCH <= 0;
+                    FINISH <= 0;
+                    REG_IN_B_BUS <= 3'd7;
+                    ALU_OP <= 3'd0;
+                    SELECTORS <= 13'b0_0000_0000_0000;
+                    NEXT_COMMAND <= JUMPNZN2;
+                end
+            
+            JUMPNZN2:
+                begin
+                    FETCH <= 0;
+                    FINISH <= 0;
+                    REG_IN_B_BUS <= 3'd7;
+                    ALU_OP <= 3'd2;
+                    SELECTORS <= 13'b0_0000_0000_0010;
+                    NEXT_COMMAND <= JUMPNZN3;
+                end
+
+            JUMPNZN3:
+                begin
+                    FETCH <= 0;
+                    FINISH <= 0;
+                    REG_IN_B_BUS <= 3'd6;
+                    ALU_OP <= 3'd0;
+                    SELECTORS <= 13'b0_0000_0100_0000;
+                    NEXT_COMMAND <= FETCH1;
+                end
+
+            ADDM1:
+                begin
+                    FETCH <= 0;
+                    FINISH <= 0;
+                    REG_IN_B_BUS <= 3'd1;
+                    ALU_OP <= 3'd0;
+                    SELECTORS <= 13'b0_0000_0000_0000;
+                    NEXT_COMMAND <= ADDM2;
+                end
+
+            ADDM2:
+                begin
+                    FETCH <= 0;
+                    FINISH <= 0;
+                    REG_IN_B_BUS <= 3'd7;
+                    ALU_OP <= 3'd0;
+                    SELECTORS <= 13'b0_0000_0000_0010;
+                    NEXT_COMMAND <= ADDMPC;
+                end
+
+            ADDMPC:
+                begin
+                    FETCH <= 0;
+                    FINISH <= 0;
+                    REG_IN_B_BUS <= 3'd3;
+                    ALU_OP <= 3'd0;
+                    SELECTORS <= 13'b1_0000_0000_0000;
+                    NEXT_COMMAND <= FETCH1;
+                end
+
+            NOP:
+                begin
+                FETCH <= 0;
+                FINISH <= 0;
+                REG_IN_B_BUS <= 3'd0;
+                ALU_OP <= 3'd0;
+                SELECTORS <= 13'b0_0000_0000_0000;
+                NEXT_COMMAND <= FETCH1;
+                end
+
+            END:
+                begin
+                    FETCH <= 0;
+                    FINISH <= 1;
+                    REG_IN_B_BUS <= 3'd0;
+                    ALU_OP <= 3'd0;
+                    SELECTORS <= 13'b0_0000_0000_0000;
+                    NEXT_COMMAND <= END;
+                end
+
+        endcase
+
+endmodule

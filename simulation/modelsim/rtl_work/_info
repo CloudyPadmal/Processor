@@ -1,0 +1,536 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Knight/Desktop/Processor/simulation/modelsim
+vALU
+Z1 !s110 1495265855
+!i10b 1
+!s100 a86PEn]@a5Dn:ORaR<@N[3
+IoAd74SI7`1[2BQ@nWMjlC1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1495262466
+Z4 8C:/Users/Knight/Desktop/Processor/ALU.v
+Z5 FC:/Users/Knight/Desktop/Processor/ALU.v
+L0 1
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1495265855.000000
+Z8 !s107 C:/Users/Knight/Desktop/Processor/ALU.v|
+Z9 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Knight/Desktop/Processor|C:/Users/Knight/Desktop/Processor/ALU.v|
+!i113 1
+Z10 o-vlog01compat -work work
+Z11 !s92 -vlog01compat -work work +incdir+C:/Users/Knight/Desktop/Processor
+Z12 tCvgOpt 0
+n@a@l@u
+vBAUD_GENERATOR
+Z13 !s110 1495265868
+!i10b 1
+!s100 c3?Mi^ooRVz>>;G2IGobA3
+I3HeSj9n3lj=<:I=G9jJm<1
+R2
+R0
+Z14 w1495237450
+Z15 8C:/Users/Knight/Desktop/Processor/UART_MODULE.v
+Z16 FC:/Users/Knight/Desktop/Processor/UART_MODULE.v
+L0 336
+R6
+r1
+!s85 0
+31
+Z17 !s108 1495265868.000000
+Z18 !s107 C:/Users/Knight/Desktop/Processor/UART_MODULE.v|
+Z19 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Knight/Desktop/Processor|C:/Users/Knight/Desktop/Processor/UART_MODULE.v|
+!i113 1
+R10
+R11
+R12
+n@b@a@u@d_@g@e@n@e@r@a@t@o@r
+vBRIDGE
+R1
+!i10b 1
+!s100 >jF;ilHABj_3cj8_L>dAm1
+I[5o^5F=MFaCkDl28IeNE<1
+R2
+R0
+Z20 w1452622833
+Z21 8C:/Users/Knight/Desktop/Processor/BRIDGE.v
+Z22 FC:/Users/Knight/Desktop/Processor/BRIDGE.v
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+Z23 !s107 C:/Users/Knight/Desktop/Processor/BRIDGE.v|
+Z24 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Knight/Desktop/Processor|C:/Users/Knight/Desktop/Processor/BRIDGE.v|
+!i113 1
+R10
+R11
+R12
+n@b@r@i@d@g@e
+vCONTROL_UNIT
+R1
+!i10b 1
+!s100 53`FZl@CJSPP7`XTC5G4]3
+IbeA;>SQ:>b[Ej`8e9zP9[3
+R2
+R0
+w1495265674
+8C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v
+FC:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Knight/Desktop/Processor|C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v|
+!i113 1
+R10
+R11
+R12
+n@c@o@n@t@r@o@l_@u@n@i@t
+vCPU
+Z25 !s110 1495265856
+!i10b 1
+!s100 >5?;DZz[I>MFmTe0Ri8=Y1
+I2KQjEDHoB_R:gACohdz:k1
+R2
+R0
+Z26 w1495243812
+Z27 8C:/Users/Knight/Desktop/Processor/CPU.v
+Z28 FC:/Users/Knight/Desktop/Processor/CPU.v
+L0 1
+R6
+r1
+!s85 0
+31
+Z29 !s108 1495265856.000000
+Z30 !s107 C:/Users/Knight/Desktop/Processor/CPU.v|
+Z31 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Knight/Desktop/Processor|C:/Users/Knight/Desktop/Processor/CPU.v|
+!i113 1
+R10
+R11
+R12
+n@c@p@u
+vCPU_CLOCK_GENERATOR
+R25
+!i10b 1
+!s100 HFUKcA;gLXLNMT1aG^=cV1
+IY83zXehVfKz][^J_^C5P=2
+R2
+R0
+R26
+R27
+R28
+L0 131
+R6
+r1
+!s85 0
+31
+R29
+R30
+R31
+!i113 1
+R10
+R11
+R12
+n@c@p@u_@c@l@o@c@k_@g@e@n@e@r@a@t@o@r
+vINSTRUCTION_ROM
+R13
+!i10b 1
+!s100 Y3h1aoHb=]62=F7_l@12>0
+Ij[>iiih>AGFZ5J?kGz7go0
+R2
+R0
+w1495260376
+8C:/Users/Knight/Desktop/Processor/INSTRUCTION_ROM.v
+FC:/Users/Knight/Desktop/Processor/INSTRUCTION_ROM.v
+Z32 L0 41
+R6
+r1
+!s85 0
+31
+R17
+!s107 C:/Users/Knight/Desktop/Processor/INSTRUCTION_ROM.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Knight/Desktop/Processor|C:/Users/Knight/Desktop/Processor/INSTRUCTION_ROM.v|
+!i113 1
+R10
+R11
+R12
+n@i@n@s@t@r@u@c@t@i@o@n_@r@o@m
+vMUX_FOR_BUS_B
+R25
+!i10b 1
+!s100 k4o_>@5@P90N9Vf:JOgea0
+IAozZCo]OZ[<dXl4GLb1An2
+R2
+R0
+Z33 w1495241551
+Z34 8C:/Users/Knight/Desktop/Processor/MUX_FOR_BUS_B.v
+Z35 FC:/Users/Knight/Desktop/Processor/MUX_FOR_BUS_B.v
+L0 1
+R6
+r1
+!s85 0
+31
+R29
+Z36 !s107 C:/Users/Knight/Desktop/Processor/MUX_FOR_BUS_B.v|
+Z37 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Knight/Desktop/Processor|C:/Users/Knight/Desktop/Processor/MUX_FOR_BUS_B.v|
+!i113 1
+R10
+R11
+R12
+n@m@u@x_@f@o@r_@b@u@s_@b
+vPROCESSOR
+Z38 !s110 1495265857
+!i10b 1
+!s100 1XgA1aXZQ0ga2c4KD9Wz93
+IaT6Ea10VdhBV1?Y;nE>JJ2
+R2
+R0
+Z39 w1495264337
+Z40 8C:/Users/Knight/Desktop/Processor/PROCESSOR.v
+Z41 FC:/Users/Knight/Desktop/Processor/PROCESSOR.v
+L0 2
+R6
+r1
+!s85 0
+31
+Z42 !s108 1495265857.000000
+Z43 !s107 C:/Users/Knight/Desktop/Processor/PROCESSOR.v|
+Z44 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Knight/Desktop/Processor|C:/Users/Knight/Desktop/Processor/PROCESSOR.v|
+!i113 1
+R10
+R11
+R12
+n@p@r@o@c@e@s@s@o@r
+vRAM
+R13
+!i10b 1
+!s100 ;CB`WVaHcabIDY3?zFB7;3
+IZ>Vz[42CkbIiU10XUJ=7f0
+R2
+R0
+w1495260386
+8C:/Users/Knight/Desktop/Processor/RAM.v
+FC:/Users/Knight/Desktop/Processor/RAM.v
+R32
+R6
+r1
+!s85 0
+31
+R17
+!s107 C:/Users/Knight/Desktop/Processor/RAM.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Knight/Desktop/Processor|C:/Users/Knight/Desktop/Processor/RAM.v|
+!i113 1
+R10
+R11
+R12
+n@r@a@m
+vRECEIVER
+R13
+!i10b 1
+!s100 _Rf6nE=2>WfCb`g7[U1kD0
+I7K69BhUV_]l<LY>OMVXDQ1
+R2
+R0
+R14
+R15
+R16
+L0 224
+R6
+r1
+!s85 0
+31
+R17
+R18
+R19
+!i113 1
+R10
+R11
+R12
+n@r@e@c@e@i@v@e@r
+vREGISTER
+R13
+!i10b 1
+!s100 Mo@m0IH=@cmm<nNan2TnY0
+IdKWEahP`IA8HRm?U>TNDe3
+R2
+R0
+Z45 w1452622914
+Z46 8C:/Users/Knight/Desktop/Processor/REGISTER.v
+Z47 FC:/Users/Knight/Desktop/Processor/REGISTER.v
+L0 1
+R6
+r1
+!s85 0
+31
+R17
+Z48 !s107 C:/Users/Knight/Desktop/Processor/REGISTER.v|
+Z49 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Knight/Desktop/Processor|C:/Users/Knight/Desktop/Processor/REGISTER.v|
+!i113 1
+R10
+R11
+R12
+n@r@e@g@i@s@t@e@r
+vtalu
+R1
+!i10b 1
+!s100 >oPDTV@AHE2ln^UACU9hk1
+IVe>Fj2]OPa6PIQieH2GDk3
+R2
+R0
+R3
+R4
+R5
+L0 51
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+R12
+vtBaudGen
+R13
+!i10b 1
+!s100 EXG0_b?YI=ekj=kh<^8@M2
+I<NIFS^LU2iET`eDKLk[i72
+R2
+R0
+R14
+R15
+R16
+L0 386
+R6
+r1
+!s85 0
+31
+R17
+R18
+R19
+!i113 1
+R10
+R11
+R12
+nt@baud@gen
+vtBRIDGE
+R1
+!i10b 1
+!s100 ek:i8<EMIZU5k4P>NWESb1
+I2HI:Ld=D_20P9NFkPQJVK2
+R2
+R0
+R20
+R21
+R22
+L0 58
+R6
+r1
+!s85 0
+31
+R7
+R23
+R24
+!i113 1
+R10
+R11
+R12
+nt@b@r@i@d@g@e
+vtdmux
+R25
+!i10b 1
+!s100 ]I[md7BVKb<S0azU84OQn3
+I<<K>Q51fMZKzVhVV?D]CV0
+R2
+R0
+R33
+R34
+R35
+L0 31
+R6
+r1
+!s85 0
+31
+R29
+R36
+R37
+!i113 1
+R10
+R11
+R12
+vtPRO
+R38
+!i10b 1
+!s100 kzhbiWCdl[3PNghY5FTYT0
+I_5<VEV;4ghO?AdD9<o3dT2
+R2
+R0
+R39
+R40
+R41
+L0 101
+R6
+r1
+!s85 0
+31
+R42
+R43
+R44
+!i113 1
+R10
+R11
+R12
+nt@p@r@o
+vTRANSMITTER
+R13
+!i10b 1
+!s100 EBK36WaYEBON46zJ=M`Sg0
+I<41JRFXRbzQ2@<1U^mkXz3
+R2
+R0
+R14
+R15
+R16
+L0 117
+R6
+r1
+!s85 0
+31
+R17
+R18
+R19
+!i113 1
+R10
+R11
+R12
+n@t@r@a@n@s@m@i@t@t@e@r
+vtReceiver
+R13
+!i10b 1
+!s100 ]mzhc7@8e:>_HoUX5U?e=3
+Ing=3ULBje>S]@`6R?]Q]T0
+R2
+R0
+R14
+R15
+R16
+L0 417
+R6
+r1
+!s85 0
+31
+R17
+R18
+R19
+!i113 1
+R10
+R11
+R12
+nt@receiver
+vtreg
+R13
+!i10b 1
+!s100 CnF<RLT@S8?GNK?hYj<Z@2
+IQ`[7nc308YhoiFaT[Dz>01
+R2
+R0
+R45
+R46
+R47
+L0 18
+R6
+r1
+!s85 0
+31
+R17
+R48
+R49
+!i113 1
+R10
+R11
+R12
+vtUART
+R13
+!i10b 1
+!s100 _89cPVPF8e39d6UD_>AOf3
+I^19`01lc4U;6eC1`2B:IW1
+R2
+R0
+R14
+R15
+R16
+L0 29
+R6
+r1
+!s85 0
+31
+R17
+R18
+R19
+!i113 1
+R10
+R11
+R12
+nt@u@a@r@t
+vUART_MODULE
+R13
+!i10b 1
+!s100 B@50mcSOkC6c=1Y3UYlFU0
+In9o]:L=`5DlFYE9fkY`:51
+R2
+R0
+R14
+R15
+R16
+L0 1
+R6
+r1
+!s85 0
+31
+R17
+R18
+R19
+!i113 1
+R10
+R11
+R12
+n@u@a@r@t_@m@o@d@u@l@e
+vWHERE_SHOULD_DATA_GO
+R13
+!i10b 1
+!s100 DjI7oCj5Ko10<SBO_XAO>0
+IP2T7n?3j5T^cVOc8_Fzk62
+R2
+R0
+w1452622943
+8C:/Users/Knight/Desktop/Processor/WHERE_SHOULD_DATA_GO.v
+FC:/Users/Knight/Desktop/Processor/WHERE_SHOULD_DATA_GO.v
+L0 1
+R6
+r1
+!s85 0
+31
+R17
+!s107 C:/Users/Knight/Desktop/Processor/WHERE_SHOULD_DATA_GO.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Knight/Desktop/Processor|C:/Users/Knight/Desktop/Processor/WHERE_SHOULD_DATA_GO.v|
+!i113 1
+R10
+R11
+R12
+n@w@h@e@r@e_@s@h@o@u@l@d_@d@a@t@a_@g@o

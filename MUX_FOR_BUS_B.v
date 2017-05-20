@@ -1,0 +1,82 @@
+module MUX_FOR_BUS_B
+(
+    // Inputs
+    input [2:0] SELECT,
+    input [15:0] PC, R1, R2, TR, R, AC,
+    input [7:0] INSTRUCTIONS, DATA_FROM_RAM,
+    // Outputs
+    output reg [15:0] BUS
+);
+    
+    always @ (SELECT or DATA_FROM_RAM or PC or R1 or R2 or TR or R or AC or INSTRUCTIONS)
+        begin
+            case(SELECT)
+                3'd0: BUS = {8'b0000_0000, DATA_FROM_RAM};
+                3'd1: BUS = PC;
+                3'd2: BUS = R1;
+                3'd3: BUS = R2;
+                3'd4: BUS = TR;
+                3'd5: BUS = R;
+                3'd6: BUS = AC;
+                3'd7: BUS = {8'b0000_0000, INSTRUCTIONS};
+            endcase
+        end
+
+endmodule
+/*
+    Demux whenever an input changes, output will be drawn
+    by the SELECT as the line selector. Output line will be
+    16 bits.
+*/
+module tdmux;
+    
+    reg CLOCK;
+    reg [2:0] SELECT;
+    reg [15:0] PC, R1, R2, TR, R, AC;
+    reg [7:0] DATA_FROM_RAM, INSTRUCTIONS;
+    wire [15:0] BUS;
+
+    // Clock
+    initial begin
+        CLOCK = 1'b0;
+        forever begin
+            #1 CLOCK = ~CLOCK;
+        end
+    end
+    
+    MUX_FOR_BUS_B uut(
+        SELECT, PC, R1, R2, TR, R, AC, INSTRUCTIONS, DATA_FROM_RAM, BUS
+    );
+    
+    // Test
+    initial begin
+        #1 // Set lines with initial values
+        PC = 16'b0001_0000_1000_0000;
+        R1 = 16'b0000_1000_1000_0000;
+        R2 = 16'b0000_0100_1000_0000;
+        TR = 16'b0000_0010_1000_0000;
+        R = 16'b0000_0001_1000_0000;
+        AC = 16'b0000_0000_1100_0000;
+        DATA_FROM_RAM = 8'b0101_0101;
+        INSTRUCTIONS = 8'b0111_0111;
+        #2 // Set SELECT
+        SELECT = 3'b000;
+        #2 // Set SELECT
+        SELECT = 3'b001;
+        #2 // Set SELECT
+        SELECT = 3'b010;
+        #2 // Set SELECT
+        SELECT = 3'b011;
+        #2 // Set SELECT
+        SELECT = 3'b100;
+        #2 // Set SELECT
+        SELECT = 3'b101;
+        #2 // Set SELECT
+        SELECT = 3'b110;
+        #2 // Set SELECT
+        SELECT = 3'b111;
+        #4 // Finish
+        $finish;
+    end
+
+endmodule

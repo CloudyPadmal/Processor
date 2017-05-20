@@ -1,0 +1,233 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "TX_PIN",
+					"strict" : false
+				},
+				{
+					"name" : "ENABLE_PROCESS_START",
+					"strict" : false
+				},
+				{
+					"name" : "ENABLE_DATA_TRANSMISSION",
+					"strict" : false
+				},
+				{
+					"name" : "CURRENTADDRESS[0]",
+					"strict" : false
+				},
+				{
+					"name" : "CURRENTADDRESS[1]",
+					"strict" : false
+				},
+				{
+					"name" : "CURRENTADDRESS[2]",
+					"strict" : false
+				},
+				{
+					"name" : "CURRENTADDRESS[3]",
+					"strict" : false
+				},
+				{
+					"name" : "CURRENTADDRESS[4]",
+					"strict" : false
+				},
+				{
+					"name" : "CURRENTADDRESS[5]",
+					"strict" : false
+				},
+				{
+					"name" : "CURRENTADDRESS[6]",
+					"strict" : false
+				},
+				{
+					"name" : "CURRENTADDRESS[7]",
+					"strict" : false
+				},
+				{
+					"name" : "CURRENTADDRESS[8]",
+					"strict" : false
+				},
+				{
+					"name" : "CURRENTADDRESS[9]",
+					"strict" : false
+				},
+				{
+					"name" : "CURRENTADDRESS[10]",
+					"strict" : false
+				},
+				{
+					"name" : "CURRENTADDRESS[11]",
+					"strict" : false
+				},
+				{
+					"name" : "CURRENTADDRESS[12]",
+					"strict" : false
+				},
+				{
+					"name" : "CURRENTADDRESS[13]",
+					"strict" : false
+				},
+				{
+					"name" : "CURRENTADDRESS[14]",
+					"strict" : false
+				},
+				{
+					"name" : "CURRENTADDRESS[15]",
+					"strict" : false
+				},
+				{
+					"name" : "BUS_TO_RAM[0]",
+					"strict" : false
+				},
+				{
+					"name" : "BUS_TO_RAM[1]",
+					"strict" : false
+				},
+				{
+					"name" : "BUS_TO_RAM[2]",
+					"strict" : false
+				},
+				{
+					"name" : "BUS_TO_RAM[3]",
+					"strict" : false
+				},
+				{
+					"name" : "BUS_TO_RAM[4]",
+					"strict" : false
+				},
+				{
+					"name" : "BUS_TO_RAM[5]",
+					"strict" : false
+				},
+				{
+					"name" : "BUS_TO_RAM[6]",
+					"strict" : false
+				},
+				{
+					"name" : "BUS_TO_RAM[7]",
+					"strict" : false
+				},
+				{
+					"name" : "INSTRUCTIONADDRESS[0]",
+					"strict" : false
+				},
+				{
+					"name" : "INSTRUCTIONADDRESS[1]",
+					"strict" : false
+				},
+				{
+					"name" : "INSTRUCTIONADDRESS[2]",
+					"strict" : false
+				},
+				{
+					"name" : "INSTRUCTIONADDRESS[3]",
+					"strict" : false
+				},
+				{
+					"name" : "INSTRUCTIONADDRESS[4]",
+					"strict" : false
+				},
+				{
+					"name" : "INSTRUCTIONADDRESS[5]",
+					"strict" : false
+				},
+				{
+					"name" : "INSTRUCTIONADDRESS[6]",
+					"strict" : false
+				},
+				{
+					"name" : "INSTRUCTIONADDRESS[7]",
+					"strict" : false
+				},
+				{
+					"name" : "CURRENTINSTRUCTION[0]",
+					"strict" : false
+				},
+				{
+					"name" : "CURRENTINSTRUCTION[1]",
+					"strict" : false
+				},
+				{
+					"name" : "CURRENTINSTRUCTION[2]",
+					"strict" : false
+				},
+				{
+					"name" : "CURRENTINSTRUCTION[3]",
+					"strict" : false
+				},
+				{
+					"name" : "CURRENTINSTRUCTION[4]",
+					"strict" : false
+				},
+				{
+					"name" : "CURRENTINSTRUCTION[5]",
+					"strict" : false
+				},
+				{
+					"name" : "CURRENTINSTRUCTION[6]",
+					"strict" : false
+				},
+				{
+					"name" : "CURRENTINSTRUCTION[7]",
+					"strict" : false
+				},
+				{
+					"name" : "OUTPUT_FROM_RAM[0]",
+					"strict" : false
+				},
+				{
+					"name" : "OUTPUT_FROM_RAM[1]",
+					"strict" : false
+				},
+				{
+					"name" : "OUTPUT_FROM_RAM[2]",
+					"strict" : false
+				},
+				{
+					"name" : "OUTPUT_FROM_RAM[3]",
+					"strict" : false
+				},
+				{
+					"name" : "OUTPUT_FROM_RAM[4]",
+					"strict" : false
+				},
+				{
+					"name" : "OUTPUT_FROM_RAM[5]",
+					"strict" : false
+				},
+				{
+					"name" : "OUTPUT_FROM_RAM[6]",
+					"strict" : false
+				},
+				{
+					"name" : "OUTPUT_FROM_RAM[7]",
+					"strict" : false
+				},
+				{
+					"name" : "WEN",
+					"strict" : false
+				},
+				{
+					"name" : "TICKK",
+					"strict" : false
+				},
+				{
+					"name" : "MAIN_CLOCK",
+					"strict" : false
+				},
+				{
+					"name" : "RESET",
+					"strict" : false
+				},
+				{
+					"name" : "RX_PIN",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
