@@ -3,10 +3,10 @@ module PROCESSOR (
     input MAIN_CLOCK, RESET, RX_PIN,
     output TX_PIN, ENABLE_PROCESS_START, ENABLE_DATA_TRANSMISSION,
     // Debug
-    output [15:0] CURRENTADDRESS,
+    output [15:0] CURRENTADDRESS, REG_AC,
     output [7:0] BUS_TO_RAM, INSTRUCTIONADDRESS, CURRENTINSTRUCTION,
     output [7:0] OUTPUT_FROM_RAM,
-    output WEN, TICKK
+    output WEN, TICKK, Z_Flag
 );
 
     wire [7:0] DATA_FROM_RAM;
@@ -36,6 +36,8 @@ module PROCESSOR (
         .CPU_WRITE_EN(CPU_WRITE_EN),
         .CPU_ADDRESS(CPU_ADDRESS),
         .CPU_DATA(CPU_DATA),
+        .REG_AC(REG_AC),
+        .Z_Flag(Z_Flag),
         .INSTRUCTION_ADDRESS(INSTRUCTION_ADDRESS)
     );
     
@@ -101,8 +103,8 @@ endmodule
 module tPRO;
     
     reg MAIN_CLOCK, RESET, RX;
-    wire TX, WEN, ENABLE_PROCESS_START, ENABLE_DATA_TRANSMISSION, TICKK;
-    wire [15:0] CURRENTADDRESS;
+    wire TX, WEN, ENABLE_PROCESS_START, ENABLE_DATA_TRANSMISSION, TICKK, Z_Flag;
+    wire [15:0] CURRENTADDRESS, REG_AC;
     wire [7:0] BUS_TO_RAM, INSTRUCTIONADDRESS, CURRENTINSTRUCTION, OUTPUT_FROM_RAM;
     
     localparam TIME = 1728;
@@ -116,10 +118,12 @@ module tPRO;
         .ENABLE_DATA_TRANSMISSION(ENABLE_DATA_TRANSMISSION),
         .CURRENTADDRESS(CURRENTADDRESS),
         .BUS_TO_RAM(BUS_TO_RAM),
+        .REG_AC(REG_AC),
         .OUTPUT_FROM_RAM(OUTPUT_FROM_RAM),
         .INSTRUCTIONADDRESS(INSTRUCTIONADDRESS),
         .CURRENTINSTRUCTION(CURRENTINSTRUCTION),
         .TICKK(TICKK),
+        .Z_Flag(Z_Flag),
         .WEN(WEN)
     );
     
@@ -191,7 +195,7 @@ module tPRO;
         RESET = 1'b1;
         #1
         RESET = 1'b0;
-        #700000       
+        #650000       
         $finish;
     end
     

@@ -5,8 +5,8 @@ module CPU
     input [7:0] DATA_FROM_RAM, INSTRUCTION,
     // Outputs
     output PROCESS_FINISHED, CPU_CLOCK,
-    output CPU_WRITE_EN,
-    output [15:0] CPU_ADDRESS,
+    output CPU_WRITE_EN, Z_Flag,
+    output [15:0] CPU_ADDRESS, REG_AC,
     output [7:0] CPU_DATA, INSTRUCTION_ADDRESS
 );
 
@@ -22,6 +22,8 @@ module CPU
     assign CPU_DATA = B_BUS[7:0];
     assign INSTRUCTION_ADDRESS = PC[7:0];
     assign PROCESS_FINISHED = SIGNAL_TO_FINISH_PROCESS;
+    assign REG_AC = AC;
+    assign Z_Flag = FLAG_Z;
     
     CPU_CLOCK_GENERATOR Clock (
         .MAIN_CLOCK(MAIN_CLOCK),

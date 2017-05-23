@@ -80,6 +80,70 @@
 					"strict" : false
 				},
 				{
+					"name" : "REG_AC[0]",
+					"strict" : false
+				},
+				{
+					"name" : "REG_AC[1]",
+					"strict" : false
+				},
+				{
+					"name" : "REG_AC[2]",
+					"strict" : false
+				},
+				{
+					"name" : "REG_AC[3]",
+					"strict" : false
+				},
+				{
+					"name" : "REG_AC[4]",
+					"strict" : false
+				},
+				{
+					"name" : "REG_AC[5]",
+					"strict" : false
+				},
+				{
+					"name" : "REG_AC[6]",
+					"strict" : false
+				},
+				{
+					"name" : "REG_AC[7]",
+					"strict" : false
+				},
+				{
+					"name" : "REG_AC[8]",
+					"strict" : false
+				},
+				{
+					"name" : "REG_AC[9]",
+					"strict" : false
+				},
+				{
+					"name" : "REG_AC[10]",
+					"strict" : false
+				},
+				{
+					"name" : "REG_AC[11]",
+					"strict" : false
+				},
+				{
+					"name" : "REG_AC[12]",
+					"strict" : false
+				},
+				{
+					"name" : "REG_AC[13]",
+					"strict" : false
+				},
+				{
+					"name" : "REG_AC[14]",
+					"strict" : false
+				},
+				{
+					"name" : "REG_AC[15]",
+					"strict" : false
+				},
+				{
 					"name" : "BUS_TO_RAM[0]",
 					"strict" : false
 				},
@@ -213,6 +277,10 @@
 				},
 				{
 					"name" : "TICKK",
+					"strict" : false
+				},
+				{
+					"name" : "Z_Flag",
 					"strict" : false
 				},
 				{

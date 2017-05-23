@@ -12,7 +12,7 @@
 # 
 # vlog -vlog01compat -work work +incdir+C:/Users/Knight/Desktop/Processor {C:/Users/Knight/Desktop/Processor/ALU.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:07:35 on May 20,2017
+# Start time: 14:07:50 on May 23,2017
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Knight/Desktop/Processor" C:/Users/Knight/Desktop/Processor/ALU.v 
 # -- Compiling module ALU
 # -- Compiling module talu
@@ -20,11 +20,11 @@
 # Top level modules:
 # 	ALU
 # 	talu
-# End time: 13:07:35 on May 20,2017, Elapsed time: 0:00:00
+# End time: 14:07:50 on May 23,2017, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/Knight/Desktop/Processor {C:/Users/Knight/Desktop/Processor/BRIDGE.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:07:35 on May 20,2017
+# Start time: 14:07:50 on May 23,2017
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Knight/Desktop/Processor" C:/Users/Knight/Desktop/Processor/BRIDGE.v 
 # -- Compiling module BRIDGE
 # -- Compiling module tBRIDGE
@@ -32,65 +32,65 @@
 # Top level modules:
 # 	BRIDGE
 # 	tBRIDGE
-# End time: 13:07:35 on May 20,2017, Elapsed time: 0:00:00
+# End time: 14:07:50 on May 23,2017, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/Knight/Desktop/Processor {C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:07:35 on May 20,2017
+# Start time: 14:07:50 on May 23,2017
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Knight/Desktop/Processor" C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v 
 # -- Compiling module CONTROL_UNIT
 # 
 # Top level modules:
 # 	CONTROL_UNIT
-# End time: 13:07:35 on May 20,2017, Elapsed time: 0:00:00
+# End time: 14:07:50 on May 23,2017, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/Knight/Desktop/Processor {C:/Users/Knight/Desktop/Processor/CPU.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:07:36 on May 20,2017
+# Start time: 14:07:51 on May 23,2017
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Knight/Desktop/Processor" C:/Users/Knight/Desktop/Processor/CPU.v 
 # -- Compiling module CPU
 # -- Compiling module CPU_CLOCK_GENERATOR
 # 
 # Top level modules:
 # 	CPU
-# End time: 13:07:36 on May 20,2017, Elapsed time: 0:00:00
+# End time: 14:07:51 on May 23,2017, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/Knight/Desktop/Processor {C:/Users/Knight/Desktop/Processor/MUX_FOR_BUS_B.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:07:36 on May 20,2017
+# Start time: 14:07:51 on May 23,2017
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Knight/Desktop/Processor" C:/Users/Knight/Desktop/Processor/MUX_FOR_BUS_B.v 
 # -- Compiling module MUX_FOR_BUS_B
 # -- Compiling module tdmux
 # 
 # Top level modules:
 # 	tdmux
-# End time: 13:07:36 on May 20,2017, Elapsed time: 0:00:00
+# End time: 14:07:51 on May 23,2017, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/Knight/Desktop/Processor {C:/Users/Knight/Desktop/Processor/PROCESSOR.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:07:37 on May 20,2017
+# Start time: 14:07:51 on May 23,2017
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Knight/Desktop/Processor" C:/Users/Knight/Desktop/Processor/PROCESSOR.v 
 # -- Compiling module PROCESSOR
 # -- Compiling module tPRO
 # 
 # Top level modules:
 # 	tPRO
-# End time: 13:07:37 on May 20,2017, Elapsed time: 0:00:00
+# End time: 14:07:51 on May 23,2017, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/Knight/Desktop/Processor {C:/Users/Knight/Desktop/Processor/REGISTER.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:07:48 on May 20,2017
+# Start time: 14:07:51 on May 23,2017
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Knight/Desktop/Processor" C:/Users/Knight/Desktop/Processor/REGISTER.v 
 # -- Compiling module REGISTER
 # -- Compiling module treg
 # 
 # Top level modules:
 # 	treg
-# End time: 13:07:48 on May 20,2017, Elapsed time: 0:00:00
+# End time: 14:07:51 on May 23,2017, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/Knight/Desktop/Processor {C:/Users/Knight/Desktop/Processor/UART_MODULE.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:07:48 on May 20,2017
+# Start time: 14:07:51 on May 23,2017
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Knight/Desktop/Processor" C:/Users/Knight/Desktop/Processor/UART_MODULE.v 
 # -- Compiling module UART_MODULE
 # -- Compiling module tUART
@@ -104,42 +104,42 @@
 # 	tUART
 # 	tBaudGen
 # 	tReceiver
-# End time: 13:07:48 on May 20,2017, Elapsed time: 0:00:00
+# End time: 14:07:51 on May 23,2017, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/Knight/Desktop/Processor {C:/Users/Knight/Desktop/Processor/WHERE_SHOULD_DATA_GO.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:07:48 on May 20,2017
+# Start time: 14:07:51 on May 23,2017
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Knight/Desktop/Processor" C:/Users/Knight/Desktop/Processor/WHERE_SHOULD_DATA_GO.v 
 # -- Compiling module WHERE_SHOULD_DATA_GO
 # 
 # Top level modules:
 # 	WHERE_SHOULD_DATA_GO
-# End time: 13:07:48 on May 20,2017, Elapsed time: 0:00:00
+# End time: 14:07:52 on May 23,2017, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/Knight/Desktop/Processor {C:/Users/Knight/Desktop/Processor/INSTRUCTION_ROM.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:07:48 on May 20,2017
+# Start time: 14:07:52 on May 23,2017
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Knight/Desktop/Processor" C:/Users/Knight/Desktop/Processor/INSTRUCTION_ROM.v 
 # -- Compiling module INSTRUCTION_ROM
 # 
 # Top level modules:
 # 	INSTRUCTION_ROM
-# End time: 13:07:48 on May 20,2017, Elapsed time: 0:00:00
+# End time: 14:07:52 on May 23,2017, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/Knight/Desktop/Processor {C:/Users/Knight/Desktop/Processor/RAM.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:07:48 on May 20,2017
+# Start time: 14:07:52 on May 23,2017
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Knight/Desktop/Processor" C:/Users/Knight/Desktop/Processor/RAM.v 
 # -- Compiling module RAM
 # 
 # Top level modules:
 # 	RAM
-# End time: 13:07:48 on May 20,2017, Elapsed time: 0:00:00
+# End time: 14:07:52 on May 23,2017, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 vsim -gui -l msim_transcript work.tPRO -Lf altera_mf_ver
 # vsim -gui -l msim_transcript work.tPRO -Lf altera_mf_ver 
-# Start time: 13:07:49 on May 20,2017
+# Start time: 14:08:20 on May 23,2017
 # Loading work.tPRO
 # Loading work.PROCESSOR
 # Loading work.CPU
@@ -169,15 +169,17 @@ add wave -position end  sim:/tPRO/WEN
 add wave -position end  sim:/tPRO/ENABLE_PROCESS_START
 add wave -position end  sim:/tPRO/ENABLE_DATA_TRANSMISSION
 add wave -position end  sim:/tPRO/TICKK
+add wave -position end  sim:/tPRO/Z_Flag
 add wave -position end  sim:/tPRO/CURRENTADDRESS
+add wave -position end  sim:/tPRO/REG_AC
 add wave -position end  sim:/tPRO/BUS_TO_RAM
 add wave -position end  sim:/tPRO/INSTRUCTIONADDRESS
 add wave -position end  sim:/tPRO/CURRENTINSTRUCTION
 add wave -position end  sim:/tPRO/OUTPUT_FROM_RAM
 run -all
-# ** Note: $finish    : C:/Users/Knight/Desktop/Processor/PROCESSOR.v(195)
-#    Time: 70000200 ps  Iteration: 0  Instance: /tPRO
+# ** Note: $finish    : C:/Users/Knight/Desktop/Processor/PROCESSOR.v(199)
+#    Time: 65000200 ps  Iteration: 0  Instance: /tPRO
 # 1
-# Break in Module tPRO at C:/Users/Knight/Desktop/Processor/PROCESSOR.v line 195
-# End time: 13:09:04 on May 20,2017, Elapsed time: 0:01:15
+# Break in Module tPRO at C:/Users/Knight/Desktop/Processor/PROCESSOR.v line 199
+# End time: 14:09:18 on May 23,2017, Elapsed time: 0:00:58
 # Errors: 0, Warnings: 0

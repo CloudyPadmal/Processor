@@ -6,7 +6,6 @@ module CONTROL_UNIT
     output reg [2:0] REG_IN_B_BUS,
     output reg [2:0] ALU_OP,
     output reg [12:0] SELECTORS
-    
 );
 
     localparam
@@ -16,7 +15,7 @@ module CONTROL_UNIT
     MVR = 6'd15, MVR1 = 6'd16, MVR2 = 6'd17, MVTR = 6'd18, 
     INCAR = 6'd19, INCR1 = 6'd20, INCR2 = 6'd21,
     ADD = 6'd27, SUB = 6'd28, MUL4 = 6'd29, DIV2 = 6'd30,
-    
+
     JPNZ = 6'd22,
     JPNZY = 6'd23, 
     JPNZN = 6'd24, JPNZN1 = 6'd25, JPNZN2 = 6'd26,
@@ -315,7 +314,7 @@ module CONTROL_UNIT
                     FINISH <= 0;
                     REG_IN_B_BUS <= INSTRUCTIONS;
                     ALU_OP <= ADDAB;
-                    SELECTORS <= 13'b1_0000_0000_0000; //13'b0_0000_0000_0000;
+                    SELECTORS <= 13'b0_0000_0000_0000;
                     NEXT_COMMAND <= JPNZN1;
                 end
 

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Processor
-Sat May 20 13:07:20 2017
+Tue May 23 14:06:43 2017
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -73,7 +73,7 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat May 20 13:07:20 2017       ;
+; Analysis & Synthesis Status        ; Successful - Tue May 23 14:06:43 2017       ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; Processor                                   ;
 ; Top-level Entity Name              ; PROCESSOR                                   ;
@@ -82,7 +82,7 @@ agreement for further details.
 ;     Total combinational functions  ; 573                                         ;
 ;     Dedicated logic registers      ; 204                                         ;
 ; Total registers                    ; 204                                         ;
-; Total pins                         ; 56                                          ;
+; Total pins                         ; 73                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 526,336                                     ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -236,9 +236,9 @@ agreement for further details.
 ;                                             ;                                              ;
 ; Total combinational functions               ; 573                                          ;
 ; Logic element usage by number of LUT inputs ;                                              ;
-;     -- 4 input functions                    ; 265                                          ;
-;     -- 3 input functions                    ; 191                                          ;
-;     -- <=2 input functions                  ; 117                                          ;
+;     -- 4 input functions                    ; 264                                          ;
+;     -- 3 input functions                    ; 190                                          ;
+;     -- <=2 input functions                  ; 119                                          ;
 ;                                             ;                                              ;
 ; Logic elements by mode                      ;                                              ;
 ;     -- normal mode                          ; 477                                          ;
@@ -248,15 +248,15 @@ agreement for further details.
 ;     -- Dedicated logic registers            ; 204                                          ;
 ;     -- I/O registers                        ; 0                                            ;
 ;                                             ;                                              ;
-; I/O pins                                    ; 56                                           ;
+; I/O pins                                    ; 73                                           ;
 ; Total memory bits                           ; 526336                                       ;
 ;                                             ;                                              ;
 ; Embedded Multiplier 9-bit elements          ; 0                                            ;
 ;                                             ;                                              ;
 ; Maximum fan-out node                        ; CPU:Processor|CPU_CLOCK_GENERATOR:Clock|TICK ;
 ; Maximum fan-out                             ; 134                                          ;
-; Total fan-out                               ; 3852                                         ;
-; Average fan-out                             ; 4.01                                         ;
+; Total fan-out                               ; 3883                                         ;
+; Average fan-out                             ; 3.90                                         ;
 +---------------------------------------------+----------------------------------------------+
 
 
@@ -265,7 +265,7 @@ agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------+----------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                             ; Entity Name          ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------+----------------------+--------------+
-; |PROCESSOR                                ; 573 (0)             ; 204 (0)                   ; 526336      ; 0            ; 0       ; 0         ; 56   ; 0            ; |PROCESSOR                                                                                                      ; PROCESSOR            ; work         ;
+; |PROCESSOR                                ; 573 (0)             ; 204 (0)                   ; 526336      ; 0            ; 0       ; 0         ; 73   ; 0            ; |PROCESSOR                                                                                                      ; PROCESSOR            ; work         ;
 ;    |BRIDGE:Bridge|                        ; 43 (43)             ; 25 (25)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PROCESSOR|BRIDGE:Bridge                                                                                        ; BRIDGE               ; work         ;
 ;    |CPU:Processor|                        ; 342 (0)             ; 128 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PROCESSOR|CPU:Processor                                                                                        ; CPU                  ; work         ;
 ;       |ALU:ALUnit|                        ; 91 (91)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PROCESSOR|CPU:Processor|ALU:ALUnit                                                                             ; ALU                  ; work         ;
@@ -376,26 +376,12 @@ Encoding Type:  One-Hot
 ; WHERE_SHOULD_DATA_GO:PathSelector|RAM_DATA_BUS[7]                    ; WHERE_SHOULD_DATA_GO:PathSelector|WideNor0 ; yes                    ;
 ; WHERE_SHOULD_DATA_GO:PathSelector|WRITE_TO_RAM                       ; WHERE_SHOULD_DATA_GO:PathSelector|WideNor0 ; yes                    ;
 ; CPU:Processor|CONTROL_UNIT:CUnit|FINISH                              ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
+; CPU:Processor|ALU:ALUnit|FLAG_Z                                      ; CPU:Processor|ALU:ALUnit|Mux1              ; yes                    ;
 ; WHERE_SHOULD_DATA_GO:PathSelector|COMMAND.SEND_DATA_FROM_MEMORY_313  ; GND                                        ; yes                    ;
 ; WHERE_SHOULD_DATA_GO:PathSelector|COMMAND.STORE_DATA_TO_MEMORY_327   ; GND                                        ; yes                    ;
 ; WHERE_SHOULD_DATA_GO:PathSelector|COMMAND.PROCESS_DATA_IN_MEMORY_320 ; GND                                        ; yes                    ;
-; CPU:Processor|CONTROL_UNIT:CUnit|REG_IN_B_BUS[1]                     ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
-; CPU:Processor|CONTROL_UNIT:CUnit|REG_IN_B_BUS[0]                     ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
-; CPU:Processor|CONTROL_UNIT:CUnit|REG_IN_B_BUS[2]                     ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
-; CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[12]                       ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
-; CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[6]                        ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
-; WHERE_SHOULD_DATA_GO:PathSelector|RAM_CLOCK                          ; WHERE_SHOULD_DATA_GO:PathSelector|WideNor0 ; yes                    ;
-; CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[0]                        ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
-; CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[8]                        ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
-; CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[7]                        ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
-; CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[11]                       ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
-; CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[5]                        ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
-; CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[10]                       ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
-; CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[4]                        ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
 ; CPU:Processor|ALU:ALUnit|C_bus[0]                                    ; CPU:Processor|ALU:ALUnit|Mux18             ; yes                    ;
 ; CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[1]                        ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
-; CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[2]                        ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
-; CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[3]                        ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
 ; CPU:Processor|ALU:ALUnit|C_bus[1]                                    ; CPU:Processor|ALU:ALUnit|Mux18             ; yes                    ;
 ; CPU:Processor|ALU:ALUnit|C_bus[2]                                    ; CPU:Processor|ALU:ALUnit|Mux18             ; yes                    ;
 ; CPU:Processor|ALU:ALUnit|C_bus[3]                                    ; CPU:Processor|ALU:ALUnit|Mux18             ; yes                    ;
@@ -403,12 +389,6 @@ Encoding Type:  One-Hot
 ; CPU:Processor|ALU:ALUnit|C_bus[5]                                    ; CPU:Processor|ALU:ALUnit|Mux18             ; yes                    ;
 ; CPU:Processor|ALU:ALUnit|C_bus[6]                                    ; CPU:Processor|ALU:ALUnit|Mux18             ; yes                    ;
 ; CPU:Processor|ALU:ALUnit|C_bus[7]                                    ; CPU:Processor|ALU:ALUnit|Mux18             ; yes                    ;
-; CPU:Processor|CONTROL_UNIT:CUnit|NEXT_COMMAND[0]                     ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
-; CPU:Processor|CONTROL_UNIT:CUnit|NEXT_COMMAND[1]                     ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
-; CPU:Processor|CONTROL_UNIT:CUnit|NEXT_COMMAND[2]                     ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
-; CPU:Processor|CONTROL_UNIT:CUnit|NEXT_COMMAND[3]                     ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
-; CPU:Processor|CONTROL_UNIT:CUnit|NEXT_COMMAND[4]                     ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
-; CPU:Processor|CONTROL_UNIT:CUnit|NEXT_COMMAND[5]                     ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
 ; CPU:Processor|ALU:ALUnit|C_bus[8]                                    ; CPU:Processor|ALU:ALUnit|Mux18             ; yes                    ;
 ; CPU:Processor|ALU:ALUnit|C_bus[9]                                    ; CPU:Processor|ALU:ALUnit|Mux18             ; yes                    ;
 ; CPU:Processor|ALU:ALUnit|C_bus[10]                                   ; CPU:Processor|ALU:ALUnit|Mux18             ; yes                    ;
@@ -417,10 +397,30 @@ Encoding Type:  One-Hot
 ; CPU:Processor|ALU:ALUnit|C_bus[13]                                   ; CPU:Processor|ALU:ALUnit|Mux18             ; yes                    ;
 ; CPU:Processor|ALU:ALUnit|C_bus[14]                                   ; CPU:Processor|ALU:ALUnit|Mux18             ; yes                    ;
 ; CPU:Processor|ALU:ALUnit|C_bus[15]                                   ; CPU:Processor|ALU:ALUnit|Mux18             ; yes                    ;
+; CPU:Processor|CONTROL_UNIT:CUnit|REG_IN_B_BUS[1]                     ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
+; CPU:Processor|CONTROL_UNIT:CUnit|REG_IN_B_BUS[0]                     ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
+; CPU:Processor|CONTROL_UNIT:CUnit|REG_IN_B_BUS[2]                     ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
+; CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[12]                       ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
+; CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[6]                        ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
+; WHERE_SHOULD_DATA_GO:PathSelector|RAM_CLOCK                          ; WHERE_SHOULD_DATA_GO:PathSelector|WideNor0 ; yes                    ;
+; CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[0]                        ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
+; CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[0]                           ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
 ; CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[1]                           ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
 ; CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[2]                           ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
-; CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[0]                           ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
-; CPU:Processor|ALU:ALUnit|FLAG_Z                                      ; CPU:Processor|ALU:ALUnit|Mux1              ; yes                    ;
+; CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[8]                        ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
+; CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[7]                        ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
+; CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[11]                       ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
+; CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[5]                        ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
+; CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[10]                       ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
+; CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[4]                        ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
+; CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[2]                        ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
+; CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[3]                        ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
+; CPU:Processor|CONTROL_UNIT:CUnit|NEXT_COMMAND[0]                     ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
+; CPU:Processor|CONTROL_UNIT:CUnit|NEXT_COMMAND[1]                     ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
+; CPU:Processor|CONTROL_UNIT:CUnit|NEXT_COMMAND[2]                     ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
+; CPU:Processor|CONTROL_UNIT:CUnit|NEXT_COMMAND[3]                     ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
+; CPU:Processor|CONTROL_UNIT:CUnit|NEXT_COMMAND[4]                     ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
+; CPU:Processor|CONTROL_UNIT:CUnit|NEXT_COMMAND[5]                     ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
 ; CPU:Processor|CONTROL_UNIT:CUnit|FETCH                               ; CPU:Processor|CONTROL_UNIT:CUnit|WideOr0   ; yes                    ;
 ; Number of user-specified and inferred latches = 73                   ;                                            ;                        ;
 +----------------------------------------------------------------------+--------------------------------------------+------------------------+
@@ -473,22 +473,22 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------+
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |PROCESSOR|BRIDGE:Bridge|RAM_ADDRESS[10]                                      ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |PROCESSOR|CPU:Processor|REGISTER:PROGRAM_COUNTER|OUT[8]                      ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |PROCESSOR|CPU:Processor|REGISTER:REGISTER_AR|OUT[5]                          ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |PROCESSOR|CPU:Processor|REGISTER:REGISTER_01|OUT[15]                         ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |PROCESSOR|CPU:Processor|REGISTER:REGISTER_02|OUT[4]                          ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |PROCESSOR|UART_MODULE:Communicator|TRANSMITTER:TX_UNIT|SENT_BIT[5]           ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |PROCESSOR|BRIDGE:Bridge|RAM_ADDRESS[0]                                       ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |PROCESSOR|CPU:Processor|REGISTER:PROGRAM_COUNTER|OUT[15]                     ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |PROCESSOR|CPU:Processor|REGISTER:REGISTER_AR|OUT[11]                         ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |PROCESSOR|CPU:Processor|REGISTER:REGISTER_01|OUT[11]                         ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |PROCESSOR|CPU:Processor|REGISTER:REGISTER_02|OUT[11]                         ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |PROCESSOR|UART_MODULE:Communicator|TRANSMITTER:TX_UNIT|SENT_BIT[4]           ;
 ; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |PROCESSOR|UART_MODULE:Communicator|RECEIVER:RX_UNIT|NUMBER_OF_BITS_CACHED[0] ;
 ; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |PROCESSOR|UART_MODULE:Communicator|TRANSMITTER:TX_UNIT|BITS_CACHED[2]        ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PROCESSOR|UART_MODULE:Communicator|RECEIVER:RX_UNIT|SAMPLE_COUNTER[0]        ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PROCESSOR|UART_MODULE:Communicator|TRANSMITTER:TX_UNIT|SAMPLE_COUNTER[2]     ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 32 LEs               ; 8 LEs                  ; No         ; |PROCESSOR|CPU:Processor|MUX_FOR_BUS_B:Muxer|Mux4                             ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |PROCESSOR|CPU:Processor|MUX_FOR_BUS_B:Muxer|Mux10                            ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |PROCESSOR|CPU:Processor|ALU:ALUnit|Mux3                                      ;
-; 6:1                ; 13 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; No         ; |PROCESSOR|CPU:Processor|ALU:ALUnit|Mux8                                      ;
-; 32:1               ; 2 bits    ; 42 LEs        ; 18 LEs               ; 24 LEs                 ; No         ; |PROCESSOR|CPU:Processor|CONTROL_UNIT:CUnit|Selector10                        ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |PROCESSOR|UART_MODULE:Communicator|RECEIVER:RX_UNIT|Selector3                ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PROCESSOR|UART_MODULE:Communicator|RECEIVER:RX_UNIT|SAMPLE_COUNTER[3]        ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PROCESSOR|UART_MODULE:Communicator|TRANSMITTER:TX_UNIT|SAMPLE_COUNTER[3]     ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 32 LEs               ; 8 LEs                  ; No         ; |PROCESSOR|CPU:Processor|MUX_FOR_BUS_B:Muxer|Mux1                             ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |PROCESSOR|CPU:Processor|MUX_FOR_BUS_B:Muxer|Mux12                            ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |PROCESSOR|CPU:Processor|ALU:ALUnit|Mux2                                      ;
+; 6:1                ; 13 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; No         ; |PROCESSOR|CPU:Processor|ALU:ALUnit|Mux6                                      ;
+; 32:1               ; 2 bits    ; 42 LEs        ; 18 LEs               ; 24 LEs                 ; No         ; |PROCESSOR|CPU:Processor|CONTROL_UNIT:CUnit|Selector8                         ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |PROCESSOR|UART_MODULE:Communicator|RECEIVER:RX_UNIT|Selector1                ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |PROCESSOR|UART_MODULE:Communicator|TRANSMITTER:TX_UNIT|Selector4             ;
 ; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; No         ; |PROCESSOR|UART_MODULE:Communicator|RECEIVER:RX_UNIT|Selector0                ;
 ; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; No         ; |PROCESSOR|UART_MODULE:Communicator|TRANSMITTER:TX_UNIT|Selector3             ;
@@ -846,7 +846,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 56                          ;
+; boundary_port         ; 73                          ;
 ; cycloneiii_ff         ; 204                         ;
 ;     CLR               ; 30                          ;
 ;     ENA               ; 62                          ;
@@ -859,9 +859,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         3 data inputs ; 15                          ;
 ;     normal            ; 478                         ;
 ;         1 data inputs ; 7                           ;
-;         2 data inputs ; 30                          ;
-;         3 data inputs ; 176                         ;
-;         4 data inputs ; 265                         ;
+;         2 data inputs ; 32                          ;
+;         3 data inputs ; 175                         ;
+;         4 data inputs ; 264                         ;
 ; cycloneiii_ram_block  ; 72                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 11.40                       ;
@@ -884,7 +884,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Sat May 20 13:07:06 2017
+    Info: Processing started: Tue May 23 14:06:29 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Processor -c Processor
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -898,13 +898,13 @@ Info (12021): Found 1 design units, including 1 entities, in source file control
     Info (12023): Found entity 1: CONTROL_UNIT File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 1
 Info (12021): Found 2 design units, including 2 entities, in source file cpu.v
     Info (12023): Found entity 1: CPU File: C:/Users/Knight/Desktop/Processor/CPU.v Line: 1
-    Info (12023): Found entity 2: CPU_CLOCK_GENERATOR File: C:/Users/Knight/Desktop/Processor/CPU.v Line: 131
+    Info (12023): Found entity 2: CPU_CLOCK_GENERATOR File: C:/Users/Knight/Desktop/Processor/CPU.v Line: 133
 Info (12021): Found 2 design units, including 2 entities, in source file mux_for_bus_b.v
     Info (12023): Found entity 1: MUX_FOR_BUS_B File: C:/Users/Knight/Desktop/Processor/MUX_FOR_BUS_B.v Line: 1
     Info (12023): Found entity 2: tdmux File: C:/Users/Knight/Desktop/Processor/MUX_FOR_BUS_B.v Line: 31
 Info (12021): Found 2 design units, including 2 entities, in source file processor.v
     Info (12023): Found entity 1: PROCESSOR File: C:/Users/Knight/Desktop/Processor/PROCESSOR.v Line: 2
-    Info (12023): Found entity 2: tPRO File: C:/Users/Knight/Desktop/Processor/PROCESSOR.v Line: 101
+    Info (12023): Found entity 2: tPRO File: C:/Users/Knight/Desktop/Processor/PROCESSOR.v Line: 103
 Info (12021): Found 2 design units, including 2 entities, in source file register.v
     Info (12023): Found entity 1: REGISTER File: C:/Users/Knight/Desktop/Processor/REGISTER.v Line: 1
     Info (12023): Found entity 2: treg File: C:/Users/Knight/Desktop/Processor/REGISTER.v Line: 18
@@ -925,50 +925,50 @@ Info (12021): Found 1 design units, including 1 entities, in source file ram.v
 Info (12021): Found 1 design units, including 1 entities, in source file image_ram.v
     Info (12023): Found entity 1: IMAGE_RAM File: C:/Users/Knight/Desktop/Processor/IMAGE_RAM.v Line: 40
 Info (12127): Elaborating entity "PROCESSOR" for the top level hierarchy
-Info (12128): Elaborating entity "CPU" for hierarchy "CPU:Processor" File: C:/Users/Knight/Desktop/Processor/PROCESSOR.v Line: 40
-Info (12128): Elaborating entity "CPU_CLOCK_GENERATOR" for hierarchy "CPU:Processor|CPU_CLOCK_GENERATOR:Clock" File: C:/Users/Knight/Desktop/Processor/CPU.v Line: 31
-Warning (10230): Verilog HDL assignment warning at CPU.v(151): truncated value with size 32 to match size of target (3) File: C:/Users/Knight/Desktop/Processor/CPU.v Line: 151
-Info (12128): Elaborating entity "MUX_FOR_BUS_B" for hierarchy "CPU:Processor|MUX_FOR_BUS_B:Muxer" File: C:/Users/Knight/Desktop/Processor/CPU.v Line: 44
-Info (12128): Elaborating entity "CONTROL_UNIT" for hierarchy "CPU:Processor|CONTROL_UNIT:CUnit" File: C:/Users/Knight/Desktop/Processor/CPU.v Line: 55
-Warning (10270): Verilog HDL Case Statement warning at CONTROL_UNIT.v(41): incomplete case statement has no default case item File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 41
-Warning (10240): Verilog HDL Always Construct warning at CONTROL_UNIT.v(40): inferring latch(es) for variable "FETCH", which holds its previous value in one or more paths through the always construct File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Warning (10240): Verilog HDL Always Construct warning at CONTROL_UNIT.v(40): inferring latch(es) for variable "FINISH", which holds its previous value in one or more paths through the always construct File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Warning (10240): Verilog HDL Always Construct warning at CONTROL_UNIT.v(40): inferring latch(es) for variable "REG_IN_B_BUS", which holds its previous value in one or more paths through the always construct File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Warning (10240): Verilog HDL Always Construct warning at CONTROL_UNIT.v(40): inferring latch(es) for variable "ALU_OP", which holds its previous value in one or more paths through the always construct File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Warning (10240): Verilog HDL Always Construct warning at CONTROL_UNIT.v(40): inferring latch(es) for variable "SELECTORS", which holds its previous value in one or more paths through the always construct File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Warning (10240): Verilog HDL Always Construct warning at CONTROL_UNIT.v(40): inferring latch(es) for variable "NEXT_COMMAND", which holds its previous value in one or more paths through the always construct File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Info (10041): Inferred latch for "NEXT_COMMAND[0]" at CONTROL_UNIT.v(40) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Info (10041): Inferred latch for "NEXT_COMMAND[1]" at CONTROL_UNIT.v(40) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Info (10041): Inferred latch for "NEXT_COMMAND[2]" at CONTROL_UNIT.v(40) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Info (10041): Inferred latch for "NEXT_COMMAND[3]" at CONTROL_UNIT.v(40) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Info (10041): Inferred latch for "NEXT_COMMAND[4]" at CONTROL_UNIT.v(40) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Info (10041): Inferred latch for "NEXT_COMMAND[5]" at CONTROL_UNIT.v(40) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Info (10041): Inferred latch for "SELECTORS[0]" at CONTROL_UNIT.v(40) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Info (10041): Inferred latch for "SELECTORS[1]" at CONTROL_UNIT.v(40) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Info (10041): Inferred latch for "SELECTORS[2]" at CONTROL_UNIT.v(40) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Info (10041): Inferred latch for "SELECTORS[3]" at CONTROL_UNIT.v(40) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Info (10041): Inferred latch for "SELECTORS[4]" at CONTROL_UNIT.v(40) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Info (10041): Inferred latch for "SELECTORS[5]" at CONTROL_UNIT.v(40) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Info (10041): Inferred latch for "SELECTORS[6]" at CONTROL_UNIT.v(40) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Info (10041): Inferred latch for "SELECTORS[7]" at CONTROL_UNIT.v(40) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Info (10041): Inferred latch for "SELECTORS[8]" at CONTROL_UNIT.v(40) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Info (10041): Inferred latch for "SELECTORS[9]" at CONTROL_UNIT.v(40) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Info (10041): Inferred latch for "SELECTORS[10]" at CONTROL_UNIT.v(40) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Info (10041): Inferred latch for "SELECTORS[11]" at CONTROL_UNIT.v(40) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Info (10041): Inferred latch for "SELECTORS[12]" at CONTROL_UNIT.v(40) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Info (10041): Inferred latch for "ALU_OP[0]" at CONTROL_UNIT.v(40) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Info (10041): Inferred latch for "ALU_OP[1]" at CONTROL_UNIT.v(40) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Info (10041): Inferred latch for "ALU_OP[2]" at CONTROL_UNIT.v(40) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Info (10041): Inferred latch for "REG_IN_B_BUS[0]" at CONTROL_UNIT.v(40) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Info (10041): Inferred latch for "REG_IN_B_BUS[1]" at CONTROL_UNIT.v(40) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Info (10041): Inferred latch for "REG_IN_B_BUS[2]" at CONTROL_UNIT.v(40) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Info (10041): Inferred latch for "FINISH" at CONTROL_UNIT.v(40) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Info (10041): Inferred latch for "FETCH" at CONTROL_UNIT.v(40) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Info (12128): Elaborating entity "REGISTER" for hierarchy "CPU:Processor|REGISTER:INSTRUCTION_REGISTER" File: C:/Users/Knight/Desktop/Processor/CPU.v Line: 63
+Info (12128): Elaborating entity "CPU" for hierarchy "CPU:Processor" File: C:/Users/Knight/Desktop/Processor/PROCESSOR.v Line: 42
+Info (12128): Elaborating entity "CPU_CLOCK_GENERATOR" for hierarchy "CPU:Processor|CPU_CLOCK_GENERATOR:Clock" File: C:/Users/Knight/Desktop/Processor/CPU.v Line: 33
+Warning (10230): Verilog HDL assignment warning at CPU.v(153): truncated value with size 32 to match size of target (3) File: C:/Users/Knight/Desktop/Processor/CPU.v Line: 153
+Info (12128): Elaborating entity "MUX_FOR_BUS_B" for hierarchy "CPU:Processor|MUX_FOR_BUS_B:Muxer" File: C:/Users/Knight/Desktop/Processor/CPU.v Line: 46
+Info (12128): Elaborating entity "CONTROL_UNIT" for hierarchy "CPU:Processor|CONTROL_UNIT:CUnit" File: C:/Users/Knight/Desktop/Processor/CPU.v Line: 57
+Warning (10270): Verilog HDL Case Statement warning at CONTROL_UNIT.v(40): incomplete case statement has no default case item File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
+Warning (10240): Verilog HDL Always Construct warning at CONTROL_UNIT.v(39): inferring latch(es) for variable "FETCH", which holds its previous value in one or more paths through the always construct File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Warning (10240): Verilog HDL Always Construct warning at CONTROL_UNIT.v(39): inferring latch(es) for variable "FINISH", which holds its previous value in one or more paths through the always construct File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Warning (10240): Verilog HDL Always Construct warning at CONTROL_UNIT.v(39): inferring latch(es) for variable "REG_IN_B_BUS", which holds its previous value in one or more paths through the always construct File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Warning (10240): Verilog HDL Always Construct warning at CONTROL_UNIT.v(39): inferring latch(es) for variable "ALU_OP", which holds its previous value in one or more paths through the always construct File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Warning (10240): Verilog HDL Always Construct warning at CONTROL_UNIT.v(39): inferring latch(es) for variable "SELECTORS", which holds its previous value in one or more paths through the always construct File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Warning (10240): Verilog HDL Always Construct warning at CONTROL_UNIT.v(39): inferring latch(es) for variable "NEXT_COMMAND", which holds its previous value in one or more paths through the always construct File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Info (10041): Inferred latch for "NEXT_COMMAND[0]" at CONTROL_UNIT.v(39) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Info (10041): Inferred latch for "NEXT_COMMAND[1]" at CONTROL_UNIT.v(39) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Info (10041): Inferred latch for "NEXT_COMMAND[2]" at CONTROL_UNIT.v(39) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Info (10041): Inferred latch for "NEXT_COMMAND[3]" at CONTROL_UNIT.v(39) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Info (10041): Inferred latch for "NEXT_COMMAND[4]" at CONTROL_UNIT.v(39) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Info (10041): Inferred latch for "NEXT_COMMAND[5]" at CONTROL_UNIT.v(39) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Info (10041): Inferred latch for "SELECTORS[0]" at CONTROL_UNIT.v(39) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Info (10041): Inferred latch for "SELECTORS[1]" at CONTROL_UNIT.v(39) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Info (10041): Inferred latch for "SELECTORS[2]" at CONTROL_UNIT.v(39) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Info (10041): Inferred latch for "SELECTORS[3]" at CONTROL_UNIT.v(39) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Info (10041): Inferred latch for "SELECTORS[4]" at CONTROL_UNIT.v(39) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Info (10041): Inferred latch for "SELECTORS[5]" at CONTROL_UNIT.v(39) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Info (10041): Inferred latch for "SELECTORS[6]" at CONTROL_UNIT.v(39) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Info (10041): Inferred latch for "SELECTORS[7]" at CONTROL_UNIT.v(39) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Info (10041): Inferred latch for "SELECTORS[8]" at CONTROL_UNIT.v(39) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Info (10041): Inferred latch for "SELECTORS[9]" at CONTROL_UNIT.v(39) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Info (10041): Inferred latch for "SELECTORS[10]" at CONTROL_UNIT.v(39) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Info (10041): Inferred latch for "SELECTORS[11]" at CONTROL_UNIT.v(39) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Info (10041): Inferred latch for "SELECTORS[12]" at CONTROL_UNIT.v(39) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Info (10041): Inferred latch for "ALU_OP[0]" at CONTROL_UNIT.v(39) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Info (10041): Inferred latch for "ALU_OP[1]" at CONTROL_UNIT.v(39) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Info (10041): Inferred latch for "ALU_OP[2]" at CONTROL_UNIT.v(39) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Info (10041): Inferred latch for "REG_IN_B_BUS[0]" at CONTROL_UNIT.v(39) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Info (10041): Inferred latch for "REG_IN_B_BUS[1]" at CONTROL_UNIT.v(39) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Info (10041): Inferred latch for "REG_IN_B_BUS[2]" at CONTROL_UNIT.v(39) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Info (10041): Inferred latch for "FINISH" at CONTROL_UNIT.v(39) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Info (10041): Inferred latch for "FETCH" at CONTROL_UNIT.v(39) File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Info (12128): Elaborating entity "REGISTER" for hierarchy "CPU:Processor|REGISTER:INSTRUCTION_REGISTER" File: C:/Users/Knight/Desktop/Processor/CPU.v Line: 65
 Warning (10230): Verilog HDL assignment warning at REGISTER.v(13): truncated value with size 32 to match size of target (8) File: C:/Users/Knight/Desktop/Processor/REGISTER.v Line: 13
-Info (12128): Elaborating entity "REGISTER" for hierarchy "CPU:Processor|REGISTER:REGISTER_AR" File: C:/Users/Knight/Desktop/Processor/CPU.v Line: 71
+Info (12128): Elaborating entity "REGISTER" for hierarchy "CPU:Processor|REGISTER:REGISTER_AR" File: C:/Users/Knight/Desktop/Processor/CPU.v Line: 73
 Warning (10230): Verilog HDL assignment warning at REGISTER.v(13): truncated value with size 32 to match size of target (16) File: C:/Users/Knight/Desktop/Processor/REGISTER.v Line: 13
-Info (12128): Elaborating entity "ALU" for hierarchy "CPU:Processor|ALU:ALUnit" File: C:/Users/Knight/Desktop/Processor/CPU.v Line: 127
+Info (12128): Elaborating entity "ALU" for hierarchy "CPU:Processor|ALU:ALUnit" File: C:/Users/Knight/Desktop/Processor/CPU.v Line: 129
 Warning (10270): Verilog HDL Case Statement warning at ALU.v(13): incomplete case statement has no default case item File: C:/Users/Knight/Desktop/Processor/ALU.v Line: 13
 Warning (10240): Verilog HDL Always Construct warning at ALU.v(11): inferring latch(es) for variable "C_bus", which holds its previous value in one or more paths through the always construct File: C:/Users/Knight/Desktop/Processor/ALU.v Line: 11
 Warning (10240): Verilog HDL Always Construct warning at ALU.v(11): inferring latch(es) for variable "FLAG_Z", which holds its previous value in one or more paths through the always construct File: C:/Users/Knight/Desktop/Processor/ALU.v Line: 11
@@ -989,7 +989,7 @@ Info (10041): Inferred latch for "C_bus[12]" at ALU.v(11) File: C:/Users/Knight/
 Info (10041): Inferred latch for "C_bus[13]" at ALU.v(11) File: C:/Users/Knight/Desktop/Processor/ALU.v Line: 11
 Info (10041): Inferred latch for "C_bus[14]" at ALU.v(11) File: C:/Users/Knight/Desktop/Processor/ALU.v Line: 11
 Info (10041): Inferred latch for "C_bus[15]" at ALU.v(11) File: C:/Users/Knight/Desktop/Processor/ALU.v Line: 11
-Info (12128): Elaborating entity "INSTRUCTION_ROM" for hierarchy "INSTRUCTION_ROM:IROM" File: C:/Users/Knight/Desktop/Processor/PROCESSOR.v Line: 46
+Info (12128): Elaborating entity "INSTRUCTION_ROM" for hierarchy "INSTRUCTION_ROM:IROM" File: C:/Users/Knight/Desktop/Processor/PROCESSOR.v Line: 48
 Info (12128): Elaborating entity "altsyncram" for hierarchy "INSTRUCTION_ROM:IROM|altsyncram:altsyncram_component" File: C:/Users/Knight/Desktop/Processor/INSTRUCTION_ROM.v Line: 83
 Info (12130): Elaborated megafunction instantiation "INSTRUCTION_ROM:IROM|altsyncram:altsyncram_component" File: C:/Users/Knight/Desktop/Processor/INSTRUCTION_ROM.v Line: 83
 Info (12133): Instantiated megafunction "INSTRUCTION_ROM:IROM|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/Knight/Desktop/Processor/INSTRUCTION_ROM.v Line: 83
@@ -1011,7 +1011,7 @@ Info (12133): Instantiated megafunction "INSTRUCTION_ROM:IROM|altsyncram:altsync
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_u5c1.tdf
     Info (12023): Found entity 1: altsyncram_u5c1 File: C:/Users/Knight/Desktop/Processor/db/altsyncram_u5c1.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_u5c1" for hierarchy "INSTRUCTION_ROM:IROM|altsyncram:altsyncram_component|altsyncram_u5c1:auto_generated" File: c:/intelfpga_lite/16.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12128): Elaborating entity "RAM" for hierarchy "RAM:MainMemory" File: C:/Users/Knight/Desktop/Processor/PROCESSOR.v Line: 54
+Info (12128): Elaborating entity "RAM" for hierarchy "RAM:MainMemory" File: C:/Users/Knight/Desktop/Processor/PROCESSOR.v Line: 56
 Info (12128): Elaborating entity "altsyncram" for hierarchy "RAM:MainMemory|altsyncram:altsyncram_component" File: C:/Users/Knight/Desktop/Processor/RAM.v Line: 87
 Info (12130): Elaborated megafunction instantiation "RAM:MainMemory|altsyncram:altsyncram_component" File: C:/Users/Knight/Desktop/Processor/RAM.v Line: 87
 Info (12133): Instantiated megafunction "RAM:MainMemory|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/Knight/Desktop/Processor/RAM.v Line: 87
@@ -1041,12 +1041,12 @@ Info (12128): Elaborating entity "decode_k8a" for hierarchy "RAM:MainMemory|alts
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_bnb.tdf
     Info (12023): Found entity 1: mux_bnb File: C:/Users/Knight/Desktop/Processor/db/mux_bnb.tdf Line: 23
 Info (12128): Elaborating entity "mux_bnb" for hierarchy "RAM:MainMemory|altsyncram:altsyncram_component|altsyncram_djf1:auto_generated|mux_bnb:mux2" File: C:/Users/Knight/Desktop/Processor/db/altsyncram_djf1.tdf Line: 47
-Info (12128): Elaborating entity "UART_MODULE" for hierarchy "UART_MODULE:Communicator" File: C:/Users/Knight/Desktop/Processor/PROCESSOR.v Line: 67
+Info (12128): Elaborating entity "UART_MODULE" for hierarchy "UART_MODULE:Communicator" File: C:/Users/Knight/Desktop/Processor/PROCESSOR.v Line: 69
 Info (12128): Elaborating entity "TRANSMITTER" for hierarchy "UART_MODULE:Communicator|TRANSMITTER:TX_UNIT" File: C:/Users/Knight/Desktop/Processor/UART_MODULE.v Line: 17
 Info (12128): Elaborating entity "RECEIVER" for hierarchy "UART_MODULE:Communicator|RECEIVER:RX_UNIT" File: C:/Users/Knight/Desktop/Processor/UART_MODULE.v Line: 21
 Info (12128): Elaborating entity "BAUD_GENERATOR" for hierarchy "UART_MODULE:Communicator|BAUD_GENERATOR:BAUD_UNIT" File: C:/Users/Knight/Desktop/Processor/UART_MODULE.v Line: 25
-Info (12128): Elaborating entity "BRIDGE" for hierarchy "BRIDGE:Bridge" File: C:/Users/Knight/Desktop/Processor/PROCESSOR.v Line: 79
-Info (12128): Elaborating entity "WHERE_SHOULD_DATA_GO" for hierarchy "WHERE_SHOULD_DATA_GO:PathSelector" File: C:/Users/Knight/Desktop/Processor/PROCESSOR.v Line: 97
+Info (12128): Elaborating entity "BRIDGE" for hierarchy "BRIDGE:Bridge" File: C:/Users/Knight/Desktop/Processor/PROCESSOR.v Line: 81
+Info (12128): Elaborating entity "WHERE_SHOULD_DATA_GO" for hierarchy "WHERE_SHOULD_DATA_GO:PathSelector" File: C:/Users/Knight/Desktop/Processor/PROCESSOR.v Line: 99
 Warning (10240): Verilog HDL Always Construct warning at WHERE_SHOULD_DATA_GO.v(26): inferring latch(es) for variable "COMMAND", which holds its previous value in one or more paths through the always construct File: C:/Users/Knight/Desktop/Processor/WHERE_SHOULD_DATA_GO.v Line: 26
 Warning (10270): Verilog HDL Case Statement warning at WHERE_SHOULD_DATA_GO.v(36): incomplete case statement has no default case item File: C:/Users/Knight/Desktop/Processor/WHERE_SHOULD_DATA_GO.v Line: 36
 Info (10264): Verilog HDL Case Statement information at WHERE_SHOULD_DATA_GO.v(36): all case item expressions in this case statement are onehot File: C:/Users/Knight/Desktop/Processor/WHERE_SHOULD_DATA_GO.v Line: 36
@@ -1139,108 +1139,108 @@ Warning (13012): Latch WHERE_SHOULD_DATA_GO:PathSelector|RAM_DATA_BUS[7] has uns
 Warning (13012): Latch WHERE_SHOULD_DATA_GO:PathSelector|WRITE_TO_RAM has unsafe behavior File: C:/Users/Knight/Desktop/Processor/WHERE_SHOULD_DATA_GO.v Line: 12
     Warning (13013): Ports D and ENA on the latch are fed by the same signal WHERE_SHOULD_DATA_GO:PathSelector|COMMAND.PROCESS_DATA_IN_MEMORY_320 File: C:/Users/Knight/Desktop/Processor/WHERE_SHOULD_DATA_GO.v Line: 26
 Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|FINISH has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 5
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[0] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 38
-Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|REG_IN_B_BUS[1] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[3] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 38
-Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|REG_IN_B_BUS[0] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[3] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 38
-Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|REG_IN_B_BUS[2] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[3] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 38
-Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[12] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[5] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 38
-Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[6] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[0] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 38
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[0] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 37
+Warning (13012): Latch CPU:Processor|ALU:ALUnit|FLAG_Z has unsafe behavior File: C:/Users/Knight/Desktop/Processor/ALU.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[0] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Warning (13012): Latch CPU:Processor|ALU:ALUnit|C_bus[0] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/ALU.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[1] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[1] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[4] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 37
+Warning (13012): Latch CPU:Processor|ALU:ALUnit|C_bus[1] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/ALU.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[1] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Warning (13012): Latch CPU:Processor|ALU:ALUnit|C_bus[2] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/ALU.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[2] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Warning (13012): Latch CPU:Processor|ALU:ALUnit|C_bus[3] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/ALU.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[2] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Warning (13012): Latch CPU:Processor|ALU:ALUnit|C_bus[4] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/ALU.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[2] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Warning (13012): Latch CPU:Processor|ALU:ALUnit|C_bus[5] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/ALU.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[2] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Warning (13012): Latch CPU:Processor|ALU:ALUnit|C_bus[6] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/ALU.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[2] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Warning (13012): Latch CPU:Processor|ALU:ALUnit|C_bus[7] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/ALU.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[2] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Warning (13012): Latch CPU:Processor|ALU:ALUnit|C_bus[8] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/ALU.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[2] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Warning (13012): Latch CPU:Processor|ALU:ALUnit|C_bus[9] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/ALU.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[2] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Warning (13012): Latch CPU:Processor|ALU:ALUnit|C_bus[10] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/ALU.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[2] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Warning (13012): Latch CPU:Processor|ALU:ALUnit|C_bus[11] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/ALU.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[2] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Warning (13012): Latch CPU:Processor|ALU:ALUnit|C_bus[12] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/ALU.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[2] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Warning (13012): Latch CPU:Processor|ALU:ALUnit|C_bus[13] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/ALU.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[2] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Warning (13012): Latch CPU:Processor|ALU:ALUnit|C_bus[14] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/ALU.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[2] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Warning (13012): Latch CPU:Processor|ALU:ALUnit|C_bus[15] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/ALU.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[2] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|REG_IN_B_BUS[1] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[3] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 37
+Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|REG_IN_B_BUS[0] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[3] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 37
+Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|REG_IN_B_BUS[2] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[3] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 37
+Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[12] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[1] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 37
+Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[6] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[0] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 37
 Warning (13012): Latch WHERE_SHOULD_DATA_GO:PathSelector|RAM_CLOCK has unsafe behavior File: C:/Users/Knight/Desktop/Processor/WHERE_SHOULD_DATA_GO.v Line: 11
     Warning (13013): Ports D and ENA on the latch are fed by the same signal WHERE_SHOULD_DATA_GO:PathSelector|COMMAND.PROCESS_DATA_IN_MEMORY_320 File: C:/Users/Knight/Desktop/Processor/WHERE_SHOULD_DATA_GO.v Line: 26
-Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[0] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[0] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 38
-Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[8] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[0] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 38
-Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[7] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[0] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 38
-Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[11] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[0] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 38
-Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[5] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[0] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 38
-Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[10] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[0] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 38
-Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[4] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[0] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 38
-Warning (13012): Latch CPU:Processor|ALU:ALUnit|C_bus[0] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/ALU.v Line: 11
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[1] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[1] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[4] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 38
-Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[2] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[0] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 38
-Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[3] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[0] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 38
-Warning (13012): Latch CPU:Processor|ALU:ALUnit|C_bus[1] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/ALU.v Line: 11
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[1] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Warning (13012): Latch CPU:Processor|ALU:ALUnit|C_bus[2] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/ALU.v Line: 11
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[2] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Warning (13012): Latch CPU:Processor|ALU:ALUnit|C_bus[3] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/ALU.v Line: 11
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[2] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Warning (13012): Latch CPU:Processor|ALU:ALUnit|C_bus[4] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/ALU.v Line: 11
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[2] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Warning (13012): Latch CPU:Processor|ALU:ALUnit|C_bus[5] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/ALU.v Line: 11
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[2] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Warning (13012): Latch CPU:Processor|ALU:ALUnit|C_bus[6] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/ALU.v Line: 11
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[2] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Warning (13012): Latch CPU:Processor|ALU:ALUnit|C_bus[7] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/ALU.v Line: 11
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[2] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|NEXT_COMMAND[0] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[5] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 38
-Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|NEXT_COMMAND[1] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[5] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 38
-Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|NEXT_COMMAND[2] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[3] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 38
-Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|NEXT_COMMAND[3] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[5] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 38
-Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|NEXT_COMMAND[4] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[4] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 38
-Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|NEXT_COMMAND[5] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[0] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 38
-Warning (13012): Latch CPU:Processor|ALU:ALUnit|C_bus[8] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/ALU.v Line: 11
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[2] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Warning (13012): Latch CPU:Processor|ALU:ALUnit|C_bus[9] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/ALU.v Line: 11
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[2] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Warning (13012): Latch CPU:Processor|ALU:ALUnit|C_bus[10] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/ALU.v Line: 11
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[2] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Warning (13012): Latch CPU:Processor|ALU:ALUnit|C_bus[11] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/ALU.v Line: 11
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[2] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Warning (13012): Latch CPU:Processor|ALU:ALUnit|C_bus[12] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/ALU.v Line: 11
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[2] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Warning (13012): Latch CPU:Processor|ALU:ALUnit|C_bus[13] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/ALU.v Line: 11
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[2] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Warning (13012): Latch CPU:Processor|ALU:ALUnit|C_bus[14] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/ALU.v Line: 11
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[2] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Warning (13012): Latch CPU:Processor|ALU:ALUnit|C_bus[15] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/ALU.v Line: 11
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[2] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[1] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[5] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 38
-Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[2] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[4] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 38
-Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[0] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[2] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 38
-Warning (13012): Latch CPU:Processor|ALU:ALUnit|FLAG_Z has unsafe behavior File: C:/Users/Knight/Desktop/Processor/ALU.v Line: 7
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[2] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 40
+Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[0] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[0] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 37
+Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[0] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[2] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 37
+Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[1] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[5] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 37
+Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[2] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[4] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 37
+Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[8] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[0] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 37
+Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[7] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[0] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 37
+Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[11] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[0] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 37
+Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[5] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[0] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 37
+Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[10] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[0] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 37
+Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[4] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[0] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 37
+Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[2] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[0] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 37
+Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|SELECTORS[3] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[0] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 37
+Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|NEXT_COMMAND[0] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[5] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 37
+Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|NEXT_COMMAND[1] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[5] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 37
+Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|NEXT_COMMAND[2] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[3] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 37
+Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|NEXT_COMMAND[3] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[5] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 37
+Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|NEXT_COMMAND[4] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[4] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 37
+Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|NEXT_COMMAND[5] has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 39
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[0] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 37
 Warning (13012): Latch CPU:Processor|CONTROL_UNIT:CUnit|FETCH has unsafe behavior File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 5
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[0] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 38
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[0] File: C:/Users/Knight/Desktop/Processor/CONTROL_UNIT.v Line: 37
 Info (13000): Registers with preset signals will power-up high File: C:/Users/Knight/Desktop/Processor/UART_MODULE.v Line: 147
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 6 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 783 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 800 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 53 output pins
+    Info (21059): Implemented 70 output pins
     Info (21061): Implemented 655 logic cells
     Info (21064): Implemented 72 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 161 warnings
-    Info: Peak virtual memory: 610 megabytes
-    Info: Processing ended: Sat May 20 13:07:20 2017
+    Info: Peak virtual memory: 617 megabytes
+    Info: Processing ended: Tue May 23 14:06:43 2017
     Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:29
+    Info: Total CPU time (on all processors): 00:00:30
 
 
