@@ -1,0 +1,39 @@
+>> Step One
+-- Select a color image with dimensions 256 x 256 and save it as 'image.jpg'
+
+>> Step Two
+-- Open the matlab script 'makeHex.m' and run it. This will create 'Image.HEX' file and the grayscale image of the color image as 'grayImage.jpg'
+
+>> Step Three
+--
+ Open python script 'mifConverter.py' with IDLE or just double click on it. This will create a memory initializing file with the name 'IMAGE.mif'
+
+>> Step Four
+-- Backup the existing 'IMAGE.mif' file in the Quartus project directory and copy new 'IMAGE.mif' file and replace the old file
+
+>> Step Five
+-- Open Quartus Prime 16.1 and compile the project with 'Start Compilation' command and wait till the compilation is complete
+
+>> Step Six
+-- Double click on 'Program Device' and open up Programmer to download the code to FPGA board
+
+>> Step Seven
+-- Click on 'Add File' and select the compiled file. Once it is appeared in the window, click 'Start' and download the code to the FPGA
+
+>> Step Eight
+-- Go to 'Tools' -> 'In System Memory Content Editor' and select 'USB-Blaster' from JTAG hardware. To make things sure, go to 'Setup...' next to it and select 'USB-Blaster' from the 'Currently selected hardware' and close the window
+
+>> Step Nine
+-- Now you will see lots of ?? marks in the window. Click on the 'Refresh' icon in the 'Instance Manager' and the values will be updated.
+
+>> Step Ten
+-- Right click on the updated memory content and select 'Export Data to File' and give a file name 'IMRA' and format as .hex and click 'Export'
+
+>> Step Eleven
+-- Copy the 'IMRA.hex' file into the 'Resources' folder and run the python script 'hexConverter.py' and this will create a 'Image.hex' file with matlab exportable file
+
+>> Step Twelve
+-- Open matlab and run the 'makeImage.m' script. This will create an image file out of the hex file processed from the FPGA and save it as 'finalImage.jpg' and display the image
+
+>> Step Thirteen
+-- Now it's time to analyze the images. Run the script 'analyseImages.m' from matlab and observe mean square error results.

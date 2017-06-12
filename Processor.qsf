@@ -48,52 +48,26 @@ set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
 set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
-set_global_assignment -name VERILOG_FILE ALU.v
-set_global_assignment -name VERILOG_FILE BRIDGE.v
-set_global_assignment -name VERILOG_FILE CONTROL_UNIT.v
-set_global_assignment -name VERILOG_FILE CPU.v
-set_global_assignment -name VERILOG_FILE MUX_FOR_BUS_B.v
-set_global_assignment -name VERILOG_FILE PROCESSOR.v
-set_global_assignment -name VERILOG_FILE REGISTER.v
-set_global_assignment -name VERILOG_FILE UART_MODULE.v
-set_global_assignment -name VERILOG_FILE WHERE_SHOULD_DATA_GO.v
-set_global_assignment -name QIP_FILE INSTRUCTION_ROM.qip
-set_global_assignment -name QIP_FILE RAM.qip
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
-set_location_assignment PIN_G19 -to ENABLE_PROCESS_START
 set_location_assignment PIN_Y2 -to MAIN_CLOCK
-set_instance_assignment -name IO_STANDARD "2.5 V" -to ENABLE_PROCESS_START
-set_instance_assignment -name IO_STANDARD "2.5 V" -to ENABLE_DATA_TRANSMISSION
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to MAIN_CLOCK
-set_location_assignment PIN_F17 -to WEN
-set_location_assignment PIN_F19 -to ENABLE_DATA_TRANSMISSION
-set_instance_assignment -name IO_STANDARD "2.5 V" -to WEN
-set_location_assignment PIN_J15 -to OUTPUT_FROM_RAM[0]
-set_location_assignment PIN_H16 -to OUTPUT_FROM_RAM[1]
-set_location_assignment PIN_J16 -to OUTPUT_FROM_RAM[2]
-set_location_assignment PIN_H17 -to OUTPUT_FROM_RAM[3]
-set_location_assignment PIN_F15 -to OUTPUT_FROM_RAM[4]
-set_location_assignment PIN_G15 -to OUTPUT_FROM_RAM[5]
-set_location_assignment PIN_G16 -to OUTPUT_FROM_RAM[6]
-set_location_assignment PIN_H15 -to OUTPUT_FROM_RAM[7]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to OUTPUT_FROM_RAM[1]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to OUTPUT_FROM_RAM[2]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to OUTPUT_FROM_RAM[3]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to OUTPUT_FROM_RAM[4]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to OUTPUT_FROM_RAM[5]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to OUTPUT_FROM_RAM[6]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to OUTPUT_FROM_RAM[7]
-set_instance_assignment -name IO_STANDARD "2.5 V" -to OUTPUT_FROM_RAM[0]
-set_location_assignment PIN_Y23 -to RESET
-set_location_assignment PIN_AC15 -to RX_PIN
-set_location_assignment PIN_AE15 -to TX_PIN
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TX_PIN
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to RX_PIN
-set_global_assignment -name HEX_FILE IMAGE.hex
-set_global_assignment -name QIP_FILE IMAGE_RAM.qip
+set_global_assignment -name VERILOG_FILE ALU.v
+set_global_assignment -name VERILOG_FILE CONTROL_UNIT.v
+set_global_assignment -name VERILOG_FILE CPU.v
+set_global_assignment -name VERILOG_FILE MUX_FOR_BUS_B.v
+set_global_assignment -name VERILOG_FILE PROCESSOR.v
+set_global_assignment -name VERILOG_FILE REGISTER.v
+set_global_assignment -name QIP_FILE INSTRUCTION_ROM.qip
+set_global_assignment -name QIP_FILE RAM.qip
 set_global_assignment -name MIF_FILE INSTRUCTION_FILE.mif
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name MIF_FILE IMAGE.mif
+set_global_assignment -name QIP_FILE IMAGE_RAM.qip
+set_location_assignment PIN_E21 -to PROCESS_DONE
+set_instance_assignment -name IO_STANDARD "2.5 V" -to PROCESS_DONE
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

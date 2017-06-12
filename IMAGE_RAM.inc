@@ -17,7 +17,9 @@
 FUNCTION IMAGE_RAM 
 (
 	address[15..0],
-	clock
+	clock,
+	data[7..0],
+	wren
 )
 
 RETURNS (

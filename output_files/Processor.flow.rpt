@@ -1,5 +1,5 @@
 Flow report for Processor
-Tue May 23 14:06:43 2017
+Wed Jun 07 14:56:58 2017
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -41,22 +41,22 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Tue May 23 14:06:43 2017       ;
+; Flow Status                        ; Successful - Wed Jun 07 14:56:58 2017       ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; Processor                                   ;
 ; Top-level Entity Name              ; PROCESSOR                                   ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 606                                         ;
-;     Total combinational functions  ; 573                                         ;
-;     Dedicated logic registers      ; 204                                         ;
-; Total registers                    ; 204                                         ;
-; Total pins                         ; 73                                          ;
+; Total logic elements               ; 694 / 114,480 ( < 1 % )                     ;
+;     Total combinational functions  ; 657 / 114,480 ( < 1 % )                     ;
+;     Dedicated logic registers      ; 266 / 114,480 ( < 1 % )                     ;
+; Total registers                    ; 266                                         ;
+; Total pins                         ; 2 / 529 ( < 1 % )                           ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 526,336                                     ;
-; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total PLLs                         ; 0                                           ;
+; Total memory bits                  ; 526,336 / 3,981,312 ( 13 % )                ;
+; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                             ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -65,7 +65,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/23/2017 14:06:30 ;
+; Start date & time ; 06/07/2017 14:55:57 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Processor           ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 1097044241719.149552858900808          ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 1097044241719.149682755701660          ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>        ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --             ;
@@ -100,33 +100,47 @@ agreement for further details.
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; PROCESSOR   ; Top            ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; PROCESSOR   ; Top            ;
 ; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; PROCESSOR   ; Top            ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --             ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --             ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --             ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                        ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:14     ; 1.0                     ; 614 MB              ; 00:00:30                           ;
-; Total                ; 00:00:14     ; --                      ; --                  ; 00:00:30                           ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:00:30     ; 1.0                     ; 684 MB              ; 00:01:03                           ;
+; Fitter                    ; 00:00:15     ; 1.0                     ; 1217 MB             ; 00:00:21                           ;
+; Assembler                 ; 00:00:04     ; 1.0                     ; 557 MB              ; 00:00:04                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.1                     ; 681 MB              ; 00:00:03                           ;
+; EDA Netlist Writer        ; 00:00:04     ; 1.0                     ; 531 MB              ; 00:00:03                           ;
+; Total                     ; 00:00:55     ; --                      ; --                  ; 00:01:34                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+-------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                     ;
-+----------------------+------------------+-------------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name     ; OS Version ; Processor type ;
-+----------------------+------------------+-------------+------------+----------------+
-; Analysis & Synthesis ; Magiko           ; Windows 8.1 ; 6.3        ; x86_64         ;
-+----------------------+------------------+-------------+------------+----------------+
++------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                          ;
++---------------------------+------------------+-------------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name     ; OS Version ; Processor type ;
++---------------------------+------------------+-------------+------------+----------------+
+; Analysis & Synthesis      ; Magiko           ; Windows 8.1 ; 6.3        ; x86_64         ;
+; Fitter                    ; Magiko           ; Windows 8.1 ; 6.3        ; x86_64         ;
+; Assembler                 ; Magiko           ; Windows 8.1 ; 6.3        ; x86_64         ;
+; TimeQuest Timing Analyzer ; Magiko           ; Windows 8.1 ; 6.3        ; x86_64         ;
+; EDA Netlist Writer        ; Magiko           ; Windows 8.1 ; 6.3        ; x86_64         ;
++---------------------------+------------------+-------------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off Processor -c Processor
+quartus_fit --read_settings_files=off --write_settings_files=off Processor -c Processor
+quartus_asm --read_settings_files=off --write_settings_files=off Processor -c Processor
+quartus_sta Processor -c Processor
+quartus_eda --read_settings_files=off --write_settings_files=off Processor -c Processor
 
 
 

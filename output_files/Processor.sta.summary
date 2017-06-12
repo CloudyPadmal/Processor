@@ -2,220 +2,64 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[0]'
-Slack : -11.097
-TNS   : -170.922
-
-Type  : Slow 1200mV 85C Model Setup 'WHERE_SHOULD_DATA_GO:PathSelector|COMMAND.PROCESS_DATA_IN_MEMORY_320'
-Slack : -7.777
-TNS   : -127.225
-
-Type  : Slow 1200mV 85C Model Setup 'CPU:Processor|CPU_CLOCK_GENERATOR:Clock|TICK'
-Slack : -6.960
-TNS   : -762.689
-
-Type  : Slow 1200mV 85C Model Setup 'MAIN_CLOCK'
-Slack : -6.852
-TNS   : -246.336
-
-Type  : Slow 1200mV 85C Model Setup 'CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[0]'
-Slack : -4.900
-TNS   : -62.043
-
-Type  : Slow 1200mV 85C Model Setup 'WHERE_SHOULD_DATA_GO:PathSelector|RAM_CLOCK'
-Slack : -4.457
-TNS   : -835.209
-
-Type  : Slow 1200mV 85C Model Hold 'CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[0]'
-Slack : -0.904
-TNS   : -17.215
-
-Type  : Slow 1200mV 85C Model Hold 'CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[0]'
-Slack : -0.546
-TNS   : -4.559
-
-Type  : Slow 1200mV 85C Model Hold 'WHERE_SHOULD_DATA_GO:PathSelector|COMMAND.PROCESS_DATA_IN_MEMORY_320'
-Slack : 0.137
+Type  : Slow 1200mV 85C Model Setup 'altera_reserved_tck'
+Slack : 44.645
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'MAIN_CLOCK'
-Slack : 0.385
+Type  : Slow 1200mV 85C Model Hold 'altera_reserved_tck'
+Slack : 0.366
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'WHERE_SHOULD_DATA_GO:PathSelector|RAM_CLOCK'
-Slack : 0.600
+Type  : Slow 1200mV 85C Model Recovery 'altera_reserved_tck'
+Slack : 97.218
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'CPU:Processor|CPU_CLOCK_GENERATOR:Clock|TICK'
-Slack : 0.656
+Type  : Slow 1200mV 85C Model Removal 'altera_reserved_tck'
+Slack : 1.024
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'MAIN_CLOCK'
-Slack : -3.000
-TNS   : -96.805
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'WHERE_SHOULD_DATA_GO:PathSelector|RAM_CLOCK'
-Slack : -2.693
-TNS   : -697.118
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CPU:Processor|CPU_CLOCK_GENERATOR:Clock|TICK'
-Slack : -2.693
-TNS   : -183.577
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[0]'
-Slack : -0.172
-TNS   : -8.627
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[0]'
-Slack : 0.412
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 49.575
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'WHERE_SHOULD_DATA_GO:PathSelector|COMMAND.PROCESS_DATA_IN_MEMORY_320'
-Slack : 0.449
+Type  : Slow 1200mV 0C Model Setup 'altera_reserved_tck'
+Slack : 45.172
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Setup 'CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[0]'
-Slack : -10.077
-TNS   : -156.113
-
-Type  : Slow 1200mV 0C Model Setup 'WHERE_SHOULD_DATA_GO:PathSelector|COMMAND.PROCESS_DATA_IN_MEMORY_320'
-Slack : -7.275
-TNS   : -118.974
-
-Type  : Slow 1200mV 0C Model Setup 'CPU:Processor|CPU_CLOCK_GENERATOR:Clock|TICK'
-Slack : -6.278
-TNS   : -689.622
-
-Type  : Slow 1200mV 0C Model Setup 'MAIN_CLOCK'
-Slack : -6.234
-TNS   : -219.442
-
-Type  : Slow 1200mV 0C Model Setup 'CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[0]'
-Slack : -4.603
-TNS   : -57.136
-
-Type  : Slow 1200mV 0C Model Setup 'WHERE_SHOULD_DATA_GO:PathSelector|RAM_CLOCK'
-Slack : -3.993
-TNS   : -734.173
-
-Type  : Slow 1200mV 0C Model Hold 'CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[0]'
-Slack : -0.873
-TNS   : -16.506
-
-Type  : Slow 1200mV 0C Model Hold 'CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[0]'
-Slack : -0.532
-TNS   : -4.768
-
-Type  : Slow 1200mV 0C Model Hold 'WHERE_SHOULD_DATA_GO:PathSelector|COMMAND.PROCESS_DATA_IN_MEMORY_320'
-Slack : 0.238
+Type  : Slow 1200mV 0C Model Hold 'altera_reserved_tck'
+Slack : 0.354
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'MAIN_CLOCK'
-Slack : 0.338
+Type  : Slow 1200mV 0C Model Recovery 'altera_reserved_tck'
+Slack : 97.502
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'WHERE_SHOULD_DATA_GO:PathSelector|RAM_CLOCK'
-Slack : 0.549
+Type  : Slow 1200mV 0C Model Removal 'altera_reserved_tck'
+Slack : 0.924
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'CPU:Processor|CPU_CLOCK_GENERATOR:Clock|TICK'
-Slack : 0.599
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 49.500
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'MAIN_CLOCK'
-Slack : -3.000
-TNS   : -96.805
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'WHERE_SHOULD_DATA_GO:PathSelector|RAM_CLOCK'
-Slack : -2.649
-TNS   : -685.854
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CPU:Processor|CPU_CLOCK_GENERATOR:Clock|TICK'
-Slack : -2.649
-TNS   : -183.181
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[0]'
-Slack : -0.159
-TNS   : -7.516
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[0]'
-Slack : 0.302
+Type  : Fast 1200mV 0C Model Setup 'altera_reserved_tck'
+Slack : 47.414
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'WHERE_SHOULD_DATA_GO:PathSelector|COMMAND.PROCESS_DATA_IN_MEMORY_320'
-Slack : 0.401
+Type  : Fast 1200mV 0C Model Hold 'altera_reserved_tck'
+Slack : 0.151
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Setup 'CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[0]'
-Slack : -5.219
-TNS   : -80.078
-
-Type  : Fast 1200mV 0C Model Setup 'WHERE_SHOULD_DATA_GO:PathSelector|COMMAND.PROCESS_DATA_IN_MEMORY_320'
-Slack : -3.291
-TNS   : -51.919
-
-Type  : Fast 1200mV 0C Model Setup 'CPU:Processor|CPU_CLOCK_GENERATOR:Clock|TICK'
-Slack : -3.271
-TNS   : -337.586
-
-Type  : Fast 1200mV 0C Model Setup 'MAIN_CLOCK'
-Slack : -3.204
-TNS   : -96.017
-
-Type  : Fast 1200mV 0C Model Setup 'CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[0]'
-Slack : -2.574
-TNS   : -30.536
-
-Type  : Fast 1200mV 0C Model Setup 'WHERE_SHOULD_DATA_GO:PathSelector|RAM_CLOCK'
-Slack : -2.318
-TNS   : -379.139
-
-Type  : Fast 1200mV 0C Model Hold 'CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[0]'
-Slack : -0.587
-TNS   : -7.221
-
-Type  : Fast 1200mV 0C Model Hold 'CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[0]'
-Slack : -0.443
-TNS   : -5.027
-
-Type  : Fast 1200mV 0C Model Hold 'WHERE_SHOULD_DATA_GO:PathSelector|COMMAND.PROCESS_DATA_IN_MEMORY_320'
-Slack : -0.055
-TNS   : -0.065
-
-Type  : Fast 1200mV 0C Model Hold 'CPU:Processor|CPU_CLOCK_GENERATOR:Clock|TICK'
-Slack : 0.094
+Type  : Fast 1200mV 0C Model Recovery 'altera_reserved_tck'
+Slack : 98.596
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'MAIN_CLOCK'
-Slack : 0.173
+Type  : Fast 1200mV 0C Model Removal 'altera_reserved_tck'
+Slack : 0.498
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'WHERE_SHOULD_DATA_GO:PathSelector|RAM_CLOCK'
-Slack : 0.260
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'MAIN_CLOCK'
-Slack : -3.000
-TNS   : -97.219
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'WHERE_SHOULD_DATA_GO:PathSelector|RAM_CLOCK'
-Slack : -1.000
-TNS   : -262.000
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CPU:Processor|CPU_CLOCK_GENERATOR:Clock|TICK'
-Slack : -1.000
-TNS   : -133.000
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CPU:Processor|CONTROL_UNIT:CUnit|CONTROL_COMMAND[0]'
-Slack : 0.134
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'WHERE_SHOULD_DATA_GO:PathSelector|COMMAND.PROCESS_DATA_IN_MEMORY_320'
-Slack : 0.236
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CPU:Processor|CONTROL_UNIT:CUnit|ALU_OP[0]'
-Slack : 0.256
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 49.455
 TNS   : 0.000
 
 ------------------------------------------------------------

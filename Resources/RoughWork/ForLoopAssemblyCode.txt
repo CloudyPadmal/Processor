@@ -1,0 +1,29 @@
+06. CLAC
+11. MVACR1 -- i
+12. MVACR2 -- Sum
+10. MVACR  
+14. MVACAR
+31. ADDM
+10. 10
+13. MVACTR -- Holds '10' : 7th
+
+05. NOP
+
+17. MVR2   -- Loop starts
+10. MVACR
+16. MVR1
+27. ADD
+12. MVACR2
+20. INCR1
+16. MVR1
+10. MVACR
+18. MVTR
+28. SUB
+22. JPNZ
+08. 08     -- Jump to NOP (09 gives error)
+
+05. NOP    -- Write total to RAM (Needed)
+19. INCAR  -- Added
+17. MVR2
+08. STAC
+32. END

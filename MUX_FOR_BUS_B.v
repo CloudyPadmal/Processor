@@ -1,24 +1,25 @@
 module MUX_FOR_BUS_B
 (
     // Inputs
-    input [2:0] SELECT,
-    input [15:0] PC, R1, R2, TR, R, AC,
+    input [3:0] SELECT,
+    input [15:0] PC, R1, R2, TR, R, AC, AR,
     input [7:0] INSTRUCTIONS, DATA_FROM_RAM,
     // Outputs
     output reg [15:0] BUS
 );
     
-    always @ (SELECT or DATA_FROM_RAM or PC or R1 or R2 or TR or R or AC or INSTRUCTIONS)
+    always @ (*)
         begin
             case(SELECT)
-                3'd0: BUS = {8'b0000_0000, DATA_FROM_RAM};
-                3'd1: BUS = PC;
-                3'd2: BUS = R1;
-                3'd3: BUS = R2;
-                3'd4: BUS = TR;
-                3'd5: BUS = R;
-                3'd6: BUS = AC;
-                3'd7: BUS = {8'b0000_0000, INSTRUCTIONS};
+                4'd0: BUS = {8'b0000_0000, DATA_FROM_RAM};
+                4'd1: BUS = PC;
+                4'd2: BUS = R1;
+                4'd3: BUS = R2;
+                4'd4: BUS = TR;
+                4'd5: BUS = R;
+                4'd6: BUS = AC;
+                4'd7: BUS = {8'b0000_0000, INSTRUCTIONS};
+                4'd8: BUS = AR;
             endcase
         end
 
@@ -31,8 +32,8 @@ endmodule
 module tdmux;
     
     reg CLOCK;
-    reg [2:0] SELECT;
-    reg [15:0] PC, R1, R2, TR, R, AC;
+    reg [3:0] SELECT;
+    reg [15:0] PC, R1, R2, TR, R, AC, AR;
     reg [7:0] DATA_FROM_RAM, INSTRUCTIONS;
     wire [15:0] BUS;
 
@@ -45,7 +46,7 @@ module tdmux;
     end
     
     MUX_FOR_BUS_B uut(
-        SELECT, PC, R1, R2, TR, R, AC, INSTRUCTIONS, DATA_FROM_RAM, BUS
+        SELECT, PC, R1, R2, TR, R, AC, AR, INSTRUCTIONS, DATA_FROM_RAM, BUS
     );
     
     // Test
@@ -57,24 +58,27 @@ module tdmux;
         TR = 16'b0000_0010_1000_0000;
         R = 16'b0000_0001_1000_0000;
         AC = 16'b0000_0000_1100_0000;
+        AR = 16'b0000_0100_1100_0000;
         DATA_FROM_RAM = 8'b0101_0101;
         INSTRUCTIONS = 8'b0111_0111;
         #2 // Set SELECT
-        SELECT = 3'b000;
+        SELECT = 4'b0000;
         #2 // Set SELECT
-        SELECT = 3'b001;
+        SELECT = 4'b0001;
         #2 // Set SELECT
-        SELECT = 3'b010;
+        SELECT = 4'b0010;
         #2 // Set SELECT
-        SELECT = 3'b011;
+        SELECT = 4'b0011;
         #2 // Set SELECT
-        SELECT = 3'b100;
+        SELECT = 4'b0100;
         #2 // Set SELECT
-        SELECT = 3'b101;
+        SELECT = 4'b0101;
         #2 // Set SELECT
-        SELECT = 3'b110;
+        SELECT = 4'b0110;
         #2 // Set SELECT
-        SELECT = 3'b111;
+        SELECT = 4'b0111;
+        #2 // Set SELECT
+        SELECT = 4'b1000;
         #4 // Finish
         $finish;
     end

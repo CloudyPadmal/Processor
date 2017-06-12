@@ -1,17 +1,19 @@
 module CPU
 (
     // Inputs
-    input MAIN_CLOCK, START_PROCESSING_FLAG,
+    input MAIN_CLOCK,
     input [7:0] DATA_FROM_RAM, INSTRUCTION,
     // Outputs
     output PROCESS_FINISHED, CPU_CLOCK,
     output CPU_WRITE_EN, Z_Flag,
-    output [15:0] CPU_ADDRESS, REG_AC,
-    output [7:0] CPU_DATA, INSTRUCTION_ADDRESS
+    output [15:0] CPU_ADDRESS, REG_AC, REG_1, REG_2,
+    output [7:0] CPU_DATA, INSTRUCTION_ADDRESS,
+    output [5:0] CMD
 );
 
     wire INTERNAL_CLOCK, FLAG_Z, FETCH;
-    wire [2:0] REG_IN_B_BUS, ALU_OP;
+    wire [2:0] ALU_OP;
+    wire [3:0] REG_IN_B_BUS;
     wire [7:0] IR;
     wire [15:0] B_BUS, PC, R1, R2, TR, R, AC, ALU_OUT;
     wire [12:0] SELECTORS;
@@ -23,11 +25,12 @@ module CPU
     assign INSTRUCTION_ADDRESS = PC[7:0];
     assign PROCESS_FINISHED = SIGNAL_TO_FINISH_PROCESS;
     assign REG_AC = AC;
+    assign REG_1 = R1;
+    assign REG_2 = R2;
     assign Z_Flag = FLAG_Z;
     
     CPU_CLOCK_GENERATOR Clock (
         .MAIN_CLOCK(MAIN_CLOCK),
-        .START_PROCESSING_FLAG(START_PROCESSING_FLAG),
         .PROCESS_FINISHED(SIGNAL_TO_FINISH_PROCESS),
         .TICK(INTERNAL_CLOCK)
     );
@@ -40,6 +43,7 @@ module CPU
         .TR(TR),
         .R(R),
         .AC(AC),
+        .AR(CPU_ADDRESS),
         .INSTRUCTIONS(INSTRUCTION),
         .DATA_FROM_RAM(DATA_FROM_RAM),
         .BUS(B_BUS)
@@ -53,6 +57,7 @@ module CPU
         .FINISH(SIGNAL_TO_FINISH_PROCESS),
         .REG_IN_B_BUS(REG_IN_B_BUS),
         .ALU_OP(ALU_OP),
+        .CMD(CMD),
         .SELECTORS(SELECTORS)
     );
     
@@ -130,28 +135,16 @@ module CPU
     
 endmodule
 
-module CPU_CLOCK_GENERATOR #(parameter N = 3, M = 8)
-// parameter N -> Number of bits in register
-// parameter M -> Clock pulse count
+module CPU_CLOCK_GENERATOR
 (
-    input MAIN_CLOCK, START_PROCESSING_FLAG, PROCESS_FINISHED,
+    input MAIN_CLOCK, PROCESS_FINISHED,
     output reg TICK = 1'b1
 );
 
-    reg [N-1:0] ACCUMULATOR = 0;
-
     always @ (posedge MAIN_CLOCK)
         begin
-            if (START_PROCESSING_FLAG & ~PROCESS_FINISHED)
-                begin
-                    if (ACCUMULATOR == (M-1))
-                        begin
-                            TICK = ~TICK;
-                            ACCUMULATOR = 0;
-                        end
-                    else
-                        ACCUMULATOR = ACCUMULATOR + 1;
-                end
+            if (~PROCESS_FINISHED)
+                TICK = ~TICK;
             else
                 TICK = 1'b0;
         end
