@@ -5,8 +5,7 @@
 -- Open the matlab script 'makeHex.m' and run it. This will create 'Image.HEX' file and the grayscale image of the color image as 'grayImage.jpg'
 
 >> Step Three
---
- Open python script 'mifConverter.py' with IDLE or just double click on it. This will create a memory initializing file with the name 'IMAGE.mif'
+-- Open python script 'mifConverter.py' with IDLE or just double click on it. This will create a memory initializing file with the name 'IMAGE.mif'
 
 >> Step Four
 -- Backup the existing 'IMAGE.mif' file in the Quartus project directory and copy new 'IMAGE.mif' file and replace the old file
