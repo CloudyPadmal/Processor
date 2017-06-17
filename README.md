@@ -6,3 +6,4 @@ Image processor using Altera DE FPGA
 - Python scripts to convert hex to mif
 - Python scripts to convert hex to matlab.hex
 - Matlab scripts to generate image from hex file
+- Matlab scripts for mean square error calculations
